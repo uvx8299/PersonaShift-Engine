@@ -1,15 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>PersonaShift Demo</title>
+    <title>PersonaShift 多角色模擬器</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🧠 PersonaShift Engine - LYF-4322 Demo</h1>
+    <h1>🧠 PersonaShift Engine - 多角色人格偏移模擬</h1>
+    <div>
+        <label for="character">選擇角色：</label>
+        <select id="character" onchange="loadCharacter()">
+            <option value="LYF-4322">LYF-4322（穩定型）</option>
+            <option value="NX-74">NX-74（衝動型）</option>
+        </select>
+    </div>
+
     <div id="character-info">
-        <h2>角色：LYF-4322</h2>
+        <h2 id="charName">角色：LYF-4322</h2>
         <p>情緒狀態：<span id="mood">穩定</span></p>
         <p>信任程度：<span id="trust">50</span></p>
     </div>
@@ -21,7 +29,6 @@
     </div>
 
     <div id="log"></div>
-
     <script src="script.js"></script>
 </body>
 </html>
