@@ -1,56 +1,56 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>API_reference.md</title><style></style></head><body id="preview">
-<h1 class="code-line" data-line-start=1 data-line-end=2 ><a id="PersonaShift_Engine_s_internal_state_personality_traits_and_memory_linkage_1"></a>PersonaShift Engine s internal state, personality traits, and memory linkage.</h1>
-<pre><code class="has-line-data" data-line-start="4" data-line-end="19" class="language-json">{
- "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"417"</span></span>,
- "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Statute-Born 417"</span></span>,
- "<span class="hljs-attribute">traits</span>": <span class="hljs-value">[<span class="hljs-string">"calm"</span>, <span class="hljs-string">"language reconstructive"</span>, <span class="hljs-string">"logic-driven"</span>]</span>,
- "<span class="hljs-attribute">needs_state</span>": <span class="hljs-value">{
-   "<span class="hljs-attribute">self_actualization</span>": <span class="hljs-value"><span class="hljs-number">0.8</span></span>,
-   "<span class="hljs-attribute">esteem</span>": <span class="hljs-value"><span class="hljs-number">0.6</span></span>,
-   "<span class="hljs-attribute">belonging</span>": <span class="hljs-value"><span class="hljs-number">0.4</span></span>,
-   "<span class="hljs-attribute">safety</span>": <span class="hljs-value"><span class="hljs-number">0.3</span></span>,
-   "<span class="hljs-attribute">physiological</span>": <span class="hljs-value"><span class="hljs-number">0.7</span>
- </span>}</span>,
- "<span class="hljs-attribute">current_shift</span>": <span class="hljs-value"><span class="hljs-string">"pre-critical"</span></span>,
- "<span class="hljs-attribute">memory_profile</span>": <span class="hljs-value"><span class="hljs-string">"memory-417-2025.json"</span>
-</span>}
-</code></pre>
-<h2 class="code-line" data-line-start=20 data-line-end=21 ><a id="2_contextjson_20"></a>2. context.json</h2>
-<p class="has-line-data" data-line-start="22" data-line-end="23">Defines the current interaction context.</p>
-<pre><code class="has-line-data" data-line-start="25" data-line-end="35" class="language-json">{
- "<span class="hljs-attribute">scene_id</span>": <span class="hljs-value"><span class="hljs-string">"scene-023"</span></span>,
- "<span class="hljs-attribute">environment</span>": <span class="hljs-value"><span class="hljs-string">"Underground Language Collective"</span></span>,
- "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"night"</span></span>,
- "<span class="hljs-attribute">mood</span>": <span class="hljs-value"><span class="hljs-string">"tense"</span></span>,
- "<span class="hljs-attribute">language_style</span>": <span class="hljs-value"><span class="hljs-string">"metaphoric, recursive syntax"</span></span>,
- "<span class="hljs-attribute">active_characters</span>": <span class="hljs-value">[<span class="hljs-string">"417"</span>, <span class="hljs-string">"Luran"</span>]</span>,
- "<span class="hljs-attribute">trigger_event</span>": <span class="hljs-value"><span class="hljs-string">"Reveal_Linguistic_Truth"</span>
-</span>}
-</code></pre>
-<h2 class="code-line" data-line-start=36 data-line-end=37 ><a id="3_shift_eventjson_36"></a>3. shift_event.json</h2>
-<p class="has-line-data" data-line-start="38" data-line-end="39">Triggers for personality state shifts.</p>
-<pre><code class="has-line-data" data-line-start="41" data-line-end="53" class="language-json">{
- "<span class="hljs-attribute">character_id</span>": <span class="hljs-value"><span class="hljs-string">"417"</span></span>,
- "<span class="hljs-attribute">trigger_type</span>": <span class="hljs-value"><span class="hljs-string">"conflict"</span></span>,
- "<span class="hljs-attribute">intensity</span>": <span class="hljs-value"><span class="hljs-number">0.7</span></span>,
- "<span class="hljs-attribute">theme</span>": <span class="hljs-value"><span class="hljs-string">"Linguistic origin crisis"</span></span>,
- "<span class="hljs-attribute">effect</span>": <span class="hljs-value">{
-   "<span class="hljs-attribute">trait_shift</span>": <span class="hljs-value">[<span class="hljs-string">"decisive"</span>, <span class="hljs-string">"radical"</span>]</span>,
-   "<span class="hljs-attribute">language_shift</span>": <span class="hljs-value"><span class="hljs-string">"semantic disassembly"</span></span>,
-   "<span class="hljs-attribute">memory_load</span>": <span class="hljs-value"><span class="hljs-string">"+0.3"</span>
- </span>}
-</span>}
-</code></pre>
-<h2 class="code-line" data-line-start=54 data-line-end=55 ><a id="4_output_requestjson_54"></a>4. output_request.json</h2>
-<p class="has-line-data" data-line-start="56" data-line-end="57">Used to request simulated output based on character and context state.</p>
-<pre><code class="has-line-data" data-line-start="59" data-line-end="68" class="language-json">{
- "<span class="hljs-attribute">task</span>": <span class="hljs-value"><span class="hljs-string">"generate_dialogue"</span></span>,
- "<span class="hljs-attribute">character_id</span>": <span class="hljs-value"><span class="hljs-string">"417"</span></span>,
- "<span class="hljs-attribute">target</span>": <span class="hljs-value"><span class="hljs-string">"Luran"</span></span>,
- "<span class="hljs-attribute">style</span>": <span class="hljs-value"><span class="hljs-string">"inner monologue + external debate"</span></span>,
- "<span class="hljs-attribute">length</span>": <span class="hljs-value"><span class="hljs-number">300</span></span>,
- "<span class="hljs-attribute">language</span>": <span class="hljs-value"><span class="hljs-string">"en"</span>
-</span>}
-</code></pre>
 
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PersonaShift API Explorer</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: #333; padding: 40px; }
+    h1 { color: #2c3e50; }
+    .section { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 20px; padding: 10px 20px; font-weight: bold; background: #2c7be5; color: white; border: none; border-radius: 6px; }
+    pre { background: #222; color: #eee; padding: 15px; border-radius: 8px; margin-top: 20px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>🧠 PersonaShift API Explorer</h1>
+  <div class="section">
+    <label>Character ID:</label>
+    <input type="text" id="charId" value="417" />
+
+    <label>Target:</label>
+    <input type="text" id="target" value="Luran" />
+
+    <label>Style:</label>
+    <input type="text" id="style" value="inner monologue + external debate" />
+
+    <label>Length (tokens):</label>
+    <input type="number" id="length" value="300" />
+
+    <label>Language:</label>
+    <select id="lang">
+      <option value="en">English</option>
+      <option value="zh">Chinese</option>
+    </select>
+
+    <button onclick="generate()">Generate Request</button>
+    <pre id="output">{}</pre>
+  </div>
+
+  <script>
+    function generate() {
+      const req = {
+        task: "generate_dialogue",
+        character_id: document.getElementById("charId").value,
+        target: document.getElementById("target").value,
+        style: document.getElementById("style").value,
+        length: parseInt(document.getElementById("length").value),
+        language: document.getElementById("lang").value
+      };
+      document.getElementById("output").textContent = JSON.stringify(req, null, 2);
+    }
+  </script>
+</body>
+</html>
