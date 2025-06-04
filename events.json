@@ -1,0 +1,18 @@
+
+{
+  "遭遇意外傷害": {
+    "description": "角色在無預警情況下受到傷害，心理與身體皆受創。",
+    "traitImpact": { "empathetic": 0.1, "rebellious": 0.2 },
+    "reaction": "角色在短期內變得多疑與抗拒控制，開始質疑命運機制。"
+  },
+  "接觸語者組織": {
+    "description": "角色初次接觸秘密語言組織，得知真相的一角。",
+    "traitImpact": { "logical": 0.05, "rebellious": 0.3 },
+    "reaction": "角色興起追尋真相的動機，對既有體制產生動搖。"
+  },
+  "重新與母體連結": {
+    "description": "角色與語源母體短暫連結，回憶起初始版本的本我。",
+    "traitImpact": { "empathetic": 0.3, "logical": 0.1 },
+    "reaction": "角色短暫恢復自我與感性，對人類情感更具理解。"
+  }
+}

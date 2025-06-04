@@ -3,16 +3,24 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>PersonaShift - 人格偏移歷程可視化</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>PersonaShift - 敘事事件模擬器</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>📈 PersonaShift - 人格偏移歷程可視化</h1>
+  <h1>🎭 PersonaShift - 敘事事件模擬器</h1>
+
   <label for="characterSelect">選擇角色：</label>
   <select id="characterSelect"></select>
-  <canvas id="shiftChart" width="800" height="400"></canvas>
 
-  <script src="shift_history.js"></script>
+  <label for="eventSelect">選擇事件：</label>
+  <select id="eventSelect"></select>
+
+  <br><br>
+  <button onclick="simulate()">🚀 模擬事件</button>
+
+  <h3>🧬 敘事模擬輸出：</h3>
+  <pre id="output"></pre>
+
+  <script src="narrative_simulator.js"></script>
 </body>
 </html>
