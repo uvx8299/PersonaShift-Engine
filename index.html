@@ -3,11 +3,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PersonaShift Engine</title>
+    <title>PersonaShift Demo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🧠 PersonaShift Engine 啟動中</h1>
-    <p>本網頁將提供人格偏移模擬器，敬請期待。</p>
+    <h1>🧠 PersonaShift Engine - LYF-4322 Demo</h1>
+    <div id="character-info">
+        <h2>角色：LYF-4322</h2>
+        <p>情緒狀態：<span id="mood">穩定</span></p>
+        <p>信任程度：<span id="trust">50</span></p>
+    </div>
+
+    <div id="actions">
+        <h3>觸發互動事件</h3>
+        <button onclick="changeMood('壓力事件')">💥 壓力事件</button>
+        <button onclick="changeMood('支持事件')">🌱 支援鼓勵</button>
+    </div>
+
+    <div id="log"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
