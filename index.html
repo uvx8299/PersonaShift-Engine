@@ -3,18 +3,16 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>PersonaShift - GPT Prompt 串接模版</title>
+  <title>PersonaShift - 人格偏移歷程可視化</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🤖 PersonaShift - GPT Prompt 串接模版工具</h1>
+  <h1>📈 PersonaShift - 人格偏移歷程可視化</h1>
   <label for="characterSelect">選擇角色：</label>
   <select id="characterSelect"></select>
+  <canvas id="shiftChart" width="800" height="400"></canvas>
 
-  <br><br>
-  <button onclick="generatePrompt()">📤 生成 GPT Prompt</button>
-  <pre id="promptOutput"></pre>
-
-  <script src="gpt_prompt.js"></script>
+  <script src="shift_history.js"></script>
 </body>
 </html>
