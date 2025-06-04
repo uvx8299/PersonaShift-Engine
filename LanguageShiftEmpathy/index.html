@@ -1,57 +1,12 @@
 
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <title>PersonaShift - 語言偏移訓練 × 多角色共感場</title>
-  <style>
-    body { font-family: sans-serif; background-color: #f7f7f7; padding: 40px; }
-    h1 { color: #222; }
-    .section { background: #fff; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.06); }
-    textarea { width: 100%; height: 80px; font-size: 16px; }
-    button { margin-top: 10px; padding: 8px 18px; font-size: 16px; }
-    .output { white-space: pre-wrap; background: #f0f0f0; padding: 12px; border-radius: 6px; margin-top: 10px; }
-  </style>
-</head>
-<body>
-  <h1>💬 PersonaShift - 語言偏移訓練 × 多角色共感場</h1>
-
-  <div class="section">
-    <label><strong>輸入共享情境片段：</strong></label>
-    <textarea id="sharedInput" placeholder="例：語控殘軍進入共感場，發出命名污染語..."></textarea>
-    <button onclick="simulateEmpathy()">模擬語言偏移反應</button>
-    <div class="output" id="responseBlock" style="display:none;">
-      <strong>模擬輸出：</strong>
-      <div id="empathyOutput">處理中...</div>
-    </div>
-  </div>
-
-  <script>
-    function simulateEmpathy() {
-      const input = document.getElementById("sharedInput").value.trim();
-      const outputBlock = document.getElementById("responseBlock");
-      const outputText = document.getElementById("empathyOutput");
-
-      if (input === "") {
-        outputText.innerText = "⚠️ 請輸入共感情境文字以開始模擬。";
-        outputBlock.style.display = "block";
-        return;
-      }
-
-      outputBlock.style.display = "block";
-      outputText.innerText =
-        "📡 語言共振模擬中...
-
-" +
-        "角色 417：語速加快，語尾頻繁使用重疊詞，開始出現古語嵌入。
-" +
-        "角色 露嵐：語句縮短，開始混用 SilentCode 剩語與象徵音。
-" +
-        "角色 LYF-4322：語調下降，語句結構由邏輯式轉為感性偏向，使用反諷語構頻率增加。
-
-" +
-        "🌐 偏移觸發：集體共感閾值臨界，語言架構即將崩解。";
-    }
-  </script>
-</body>
-</html>
+<div class="intro-box">
+  <h2>🧠 模組導覽 / Module Guide</h2>
+  <p><strong>語言偏移訓練 × 共感場</strong> 是一個 模擬語感偏移與多角色共鳴的訓練環境。</p>
+  <p><i><strong>Language Shift Empathy Field</strong> is a training environment for simulating linguistic and empathetic shifts.</i></p>
+  <ul>
+    <li>📍 第一步：輸入主角語句與語境<br><i>Step 1: Input protagonist speech and context</i></li>
+    <li>📍 第二步：加入反應角色並設定語感<br><i>Step 2: Add responder characters and set emotional tones</i></li>
+    <li>📍 第三步：觀察語義波動與共感反應<br><i>Step 3: Observe semantic shifts and empathy reactions</i></li>
+  </ul>
+  <p>📌 範例輸入 / Example Input：<br>主角：417號<br>語句：「我開始聽見語音殘響，但無法命名它。」</p>
+</div>

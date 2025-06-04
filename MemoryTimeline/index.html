@@ -1,47 +1,12 @@
 
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <title>PersonaShift - 記憶時間軸導圖</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body { font-family: sans-serif; padding: 30px; background: #f0f0f0; color: #333; }
-    h1 { color: #222; }
-    canvas { max-width: 900px; margin: 0 auto; background: #fff; padding: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.08); }
-  </style>
-</head>
-<body>
-  <h1>🧠 PersonaShift - 記憶時間軸導圖</h1>
-  <p>展示角色過去關鍵記憶事件與時間順序對應的記憶強度。</p>
-  <canvas id="timelineChart"></canvas>
-
-  <script>
-    const ctx = document.getElementById('timelineChart');
-    const data = {
-      labels: ['創生階段', '初遇語者', '供體錯誤案', '語控暴露', 'SilentCode甦醒', '語感共振實驗'],
-      datasets: [{
-        label: 'LYF-4322 記憶強度時間軸',
-        data: [0.3, 0.6, 0.9, 0.7, 0.95, 0.8],
-        borderColor: 'rgba(54, 162, 235, 1)',
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        tension: 0.4,
-        fill: true
-      }]
-    };
-
-    new Chart(ctx, {
-      type: 'line',
-      data: data,
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            suggestedMax: 1
-          }
-        }
-      }
-    });
-  </script>
-</body>
-</html>
+<div class="intro-box">
+  <h2>🧠 模組導覽 / Module Guide</h2>
+  <p><strong>記憶時間軸導圖</strong> 是一個 可追蹤角色記憶發展與語感偏移的模擬工具。</p>
+  <p><i><strong>Memory Timeline Mapping</strong> is a tool for tracking memory shifts and narrative perception.</i></p>
+  <ul>
+    <li>📍 第一步：輸入角色名稱與初始記憶內容<br><i>Step 1: Enter a character name and their starting memory</i></li>
+    <li>📍 第二步：點選「新增事件」以建立記憶節點<br><i>Step 2: Click 'Add Event' to create memory entries</i></li>
+    <li>📍 第三步：可視化角色記憶偏移的時間順序<br><i>Step 3: Visualize the timeline of memory evolution</i></li>
+  </ul>
+  <p>📌 範例輸入 / Example Input：<br>角色名：LYF-4322<br>初始記憶：我曾被語控者強制抹除原始語感。</p>
+</div>

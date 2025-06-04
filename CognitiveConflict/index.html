@@ -1,57 +1,12 @@
 
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <title>PersonaShift - 語感認知衝突模擬器</title>
-  <style>
-    body { font-family: sans-serif; background-color: #f0f4f8; padding: 40px; }
-    h1 { color: #1a1a1a; }
-    .section { background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); margin-top: 20px; }
-    textarea { width: 100%; height: 80px; font-size: 16px; margin-top: 8px; }
-    button { margin-top: 10px; padding: 8px 16px; font-size: 16px; }
-    .output { white-space: pre-wrap; background: #f5f5f5; padding: 12px; border-radius: 6px; margin-top: 10px; }
-  </style>
-</head>
-<body>
-  <h1>🧠 PersonaShift - 語感認知衝突模擬器</h1>
-
-  <div class="section">
-    <label><strong>輸入衝突場景或語言事件：</strong></label>
-    <textarea id="conflictInput" placeholder="例：角色堅信語言能解放一切，但命名者卻下令封語..."></textarea>
-    <button onclick="simulateConflict()">模擬語感認知衝突</button>
-    <div class="output" id="conflictBlock" style="display:none;">
-      <strong>模擬輸出：</strong>
-      <div id="conflictOutput">處理中...</div>
-    </div>
-  </div>
-
-  <script>
-    function simulateConflict() {
-      const input = document.getElementById("conflictInput").value.trim();
-      const outputBlock = document.getElementById("conflictBlock");
-      const outputText = document.getElementById("conflictOutput");
-
-      if (input === "") {
-        outputText.innerText = "⚠️ 請輸入語言與認知衝突事件。";
-        outputBlock.style.display = "block";
-        return;
-      }
-
-      outputBlock.style.display = "block";
-      outputText.innerText =
-        "🧠 偵測到語感認知衝突：
-
-" +
-        "角色 417 開始出現語義震盪：句式混亂、邏輯倒置、情緒中斷語句。
-" +
-        "語感偏移反應：轉向非命名結構、詞彙化為象徵標記。
-" +
-        "認知裂縫擴大，觸發回憶片段導入語流（記憶映射同步中）...
-
-" +
-        "⚠️ 語言崩解預警：角色即將進入『解語幻象』狀態。";
-    }
-  </script>
-</body>
-</html>
+<div class="intro-box">
+  <h2>🧠 模組導覽 / Module Guide</h2>
+  <p><strong>語感認知衝突模擬器</strong> 是一個 模擬語義混亂與語感認知張力的衝突場域。</p>
+  <p><i><strong>Cognitive Conflict Simulator</strong> is a field for simulating semantic confusion and cognitive tension.</i></p>
+  <ul>
+    <li>📍 第一步：設定兩段語義對立語句<br><i>Step 1: Set two conflicting semantic statements</i></li>
+    <li>📍 第二步：選擇角色或主體接受干擾<br><i>Step 2: Select agent receiving conflict</i></li>
+    <li>📍 第三步：觀察語感混亂與後續調整<br><i>Step 3: Observe confusion and post-processing behavior</i></li>
+  </ul>
+  <p>📌 範例輸入 / Example Input：<br>語句A：「語是秩序之始」；語句B：「語為混沌之器」</p>
+</div>
