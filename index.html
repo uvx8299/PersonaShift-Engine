@@ -7,42 +7,58 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #f3f6fb, #e0e6f0);
       padding: 40px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.light {
+      background: linear-gradient(to bottom right, #f3f6fb, #e0e6f0);
       color: #2c3e50;
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
+
+    body.dark {
+      background: #121212;
+      color: #f2f2f2;
     }
-    .desc {
-      font-size: 16px;
-      margin-bottom: 30px;
+
+    h1 { font-size: 28px; margin-bottom: 10px; }
+    .desc { font-size: 16px; margin-bottom: 30px; }
+
+    .mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 30px;
     }
+
     .module-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
+
     .module-card {
-      background-color: #ffffff;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
     }
+
+    body.light .module-card {
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    body.dark .module-card {
+      background-color: #1e1e1e;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+    }
+
     .module-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
-    .module-card h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    .module-card p {
-      font-size: 14px;
-      color: #444;
-    }
+
+    .module-card h2 { font-size: 20px; margin-bottom: 10px; }
+    .module-card p { font-size: 14px; }
+
     .module-card a {
       display: inline-block;
       margin-top: 10px;
@@ -53,12 +69,17 @@
       border-radius: 6px;
       font-weight: bold;
     }
+
     .module-card a:hover {
       background-color: #1a5cc8;
     }
+
+    .footer { margin-top: 40px; font-size: 14px; }
   </style>
 </head>
-<body>
+<body class="light">
+  <button class="mode-toggle" onclick="toggleMode()">🌓 切換模式 / Toggle Mode</button>
+
   <h1>🧠 PersonaShift - 語者訓練模組首頁</h1>
   <p class="desc">以下為目前可使用的互動模組。<br><i>All available modules for interactive language simulation are listed below.</i></p>
 
@@ -88,9 +109,16 @@
     </div>
   </div>
 
-  <p style="margin-top:40px;font-size:14px;">
+  <p class="footer">
     📬 聯絡作者：uvx8299@gmail.com<br>
     GitHub Pages: <a href="https://uvx8299.github.io/PersonaShift-Engine/">https://uvx8299.github.io/PersonaShift-Engine/</a>
   </p>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      body.className = body.className === 'dark' ? 'light' : 'dark';
+    }
+  </script>
 </body>
 </html>
