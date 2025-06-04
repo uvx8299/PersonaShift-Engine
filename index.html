@@ -3,35 +3,18 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>PersonaShift - AI 語境整合模擬</title>
+    <title>PersonaShift - 偏好圖譜可視化</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>📡 PersonaShift Engine - GPT 語境整合模擬</h1>
-    <div>
-        <label for="character">選擇角色：</label>
-        <select id="character" onchange="loadCharacter()"></select>
-    </div>
+    <h1>🧭 PersonaShift Engine - 偏好圖譜可視化</h1>
 
-    <div id="character-info">
-        <h2 id="charName">角色：</h2>
-        <p>信任程度：<span id="trust">-</span></p>
-        <p>信任傾向偏移值（bias）：<span id="bias">-</span></p>
-        <p>目前語氣風格：<span id="tone">-</span></p>
-    </div>
+    <label for="character">選擇角色：</label>
+    <select id="character" onchange="updateRadarChart()"></select>
 
-    <div id="actions">
-        <h3>互動模擬事件</h3>
-        <button onclick="triggerEvent('support')">🌱 支持角色</button>
-        <button onclick="triggerEvent('doubt')">⚠ 懷疑角色</button>
-        <button onclick="triggerEvent('betray')">💔 背叛角色</button>
-    </div>
+    <canvas id="radarChart" width="400" height="400"></canvas>
 
-    <div id="gptcontext">
-        <h3>🧠 輸出給 GPT 的語境資料：</h3>
-        <pre id="context-output"></pre>
-    </div>
-
-    <script src="script.js"></script>
+    <script src="radar.js"></script>
 </body>
 </html>
