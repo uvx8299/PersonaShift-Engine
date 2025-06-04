@@ -3,51 +3,94 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>PersonaShift 語者訓練模組總覽</title>
+  <title>PersonaShift - 語者訓練模組首頁</title>
   <style>
-    body { font-family: sans-serif; background-color: #f9f9f9; padding: 40px; }
-    h1 { color: #2c3e50; font-size: 28px; }
-    .module { background: #ffffff; padding: 20px; border-radius: 8px;
-              margin-top: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.06); }
-    a { color: #2a6ddf; font-weight: bold; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f3f6fb, #e0e6f0);
+      padding: 40px;
+      color: #2c3e50;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .desc {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .module-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+    .module-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    .module-card h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .module-card p {
+      font-size: 14px;
+      color: #444;
+    }
+    .module-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background-color: #2c7be5;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .module-card a:hover {
+      background-color: #1a5cc8;
+    }
   </style>
 </head>
 <body>
-  <h1>🧠 PersonaShift - 語者訓練模組總覽<br><span style="font-size:16px;">Module Overview</span></h1>
-  <p>以下為目前可使用的互動模組：<br><i>The following modules are available for simulation:</i></p>
+  <h1>🧠 PersonaShift - 語者訓練模組首頁</h1>
+  <p class="desc">以下為目前可使用的互動模組。<br><i>All available modules for interactive language simulation are listed below.</i></p>
 
-  <div class="module">
-    <h2>📘 記憶時間軸導圖 / Memory Timeline</h2>
-    <p>追蹤角色記憶與語感偏移事件的時間線視覺化。<br>
-       <i>Visualize character memory events and linguistic drift over time.</i></p>
-    <p><a href="MemoryTimeline/">🔗 進入模組 / Launch Module</a></p>
+  <div class="module-grid">
+    <div class="module-card">
+      <h2>📘 記憶時間軸導圖<br><small>Memory Timeline</small></h2>
+      <p>可視化角色記憶與語感偏移事件順序。</p>
+      <a href="MemoryTimeline/">🔗 啟動模組</a>
+    </div>
+
+    <div class="module-card">
+      <h2>🎭 情境偏移模擬器<br><small>Context Shift Simulator</small></h2>
+      <p>根據場景模擬語風與決策偏移。</p>
+      <a href="CharacterShiftSimulator/">🔗 啟動模組</a>
+    </div>
+
+    <div class="module-card">
+      <h2>🌀 語偏 × 共感場<br><small>Language Shift × Empathic Field</small></h2>
+      <p>觀察多角色語感交互與偏移語行。</p>
+      <a href="LanguageShiftEmpathy/">🔗 啟動模組</a>
+    </div>
+
+    <div class="module-card">
+      <h2>⚡ 語感認知衝突模擬器<br><small>Cognitive Conflict</small></h2>
+      <p>處理語義信念與現實矛盾時的語感崩解。</p>
+      <a href="CognitiveConflict/">🔗 啟動模組</a>
+    </div>
   </div>
 
-  <div class="module">
-    <h2>🎭 角色情境偏移模擬器 / Context Shift Simulator</h2>
-    <p>輸入場景描述以模擬角色行為與語言風格的改變。<br>
-       <i>Enter a situation to simulate behavior and language shifts.</i></p>
-    <p><a href="CharacterShiftSimulator/">🔗 進入模組 / Launch Module</a></p>
-  </div>
-
-  <div class="module">
-    <h2>🌀 語言偏移訓練 × 共感場 / Language Shift × Empathic Field</h2>
-    <p>模擬語感共鳴場中，多角色語言偏移反應。<br>
-       <i>Simulate multi-agent language shifts in an empathic field.</i></p>
-    <p><a href="LanguageShiftEmpathy/">🔗 進入模組 / Launch Module</a></p>
-  </div>
-
-  <div class="module">
-    <h2>⚡ 語感認知衝突模擬器 / Cognitive Conflict Simulator</h2>
-    <p>模擬語言信念與現實矛盾所造成的語感崩解。<br>
-       <i>Simulate linguistic breakdown caused by cognitive dissonance.</i></p>
-    <p><a href="CognitiveConflict/">🔗 進入模組 / Launch Module</a></p>
-  </div>
-
-  <div class="module">
-    <h2>📬 聯絡開發者 / Contact Developer</h2>
-    <p>Email: <strong>uvx8299@gmail.com</strong></p>
-  </div>
+  <p style="margin-top:40px;font-size:14px;">
+    📬 聯絡作者：uvx8299@gmail.com<br>
+    GitHub Pages: <a href="https://uvx8299.github.io/PersonaShift-Engine/">https://uvx8299.github.io/PersonaShift-Engine/</a>
+  </p>
 </body>
 </html>
