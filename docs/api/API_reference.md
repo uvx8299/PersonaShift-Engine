@@ -3,8 +3,6 @@
 
 This document describes the basic structure and fields of the PersonaShift Engine modular system.
 
----
-
 ## 1. characters.json
 
 Defines a character’s internal state, personality traits, and memory linkage.
@@ -26,17 +24,6 @@ Defines a character’s internal state, personality traits, and memory linkage.
 }
 ```
 
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique character ID |
-| name | string | Display name |
-| traits | array of strings | Core behavioral tendencies |
-| needs_state | object | Maslow-style motivation levels |
-| current_shift | string | Current personality state |
-| memory_profile | string | Linked memory file ID |
-
----
-
 ## 2. context.json
 
 Defines the current interaction context.
@@ -52,8 +39,6 @@ Defines the current interaction context.
   "trigger_event": "Reveal_Linguistic_Truth"
 }
 ```
-
----
 
 ## 3. shift_event.json
 
@@ -73,8 +58,6 @@ Triggers for personality state shifts.
 }
 ```
 
----
-
 ## 4. output_request.json
 
 Used to request simulated output based on character and context state.
@@ -89,7 +72,3 @@ Used to request simulated output based on character and context state.
   "language": "en"
 }
 ```
-
----
-
-This document is subject to expansion as modules evolve.
