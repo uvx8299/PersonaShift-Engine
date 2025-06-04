@@ -3,54 +3,54 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>PersonaShift - 語言偏移訓練 × 多角色共感場</title>
+  <title>PersonaShift - 語感認知衝突模擬器</title>
   <style>
-    body { font-family: sans-serif; background-color: #f7f7f7; padding: 40px; }
-    h1 { color: #222; }
-    .section { background: #fff; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.06); }
-    textarea { width: 100%; height: 80px; font-size: 16px; }
-    button { margin-top: 10px; padding: 8px 18px; font-size: 16px; }
-    .output { white-space: pre-wrap; background: #f0f0f0; padding: 12px; border-radius: 6px; margin-top: 10px; }
+    body { font-family: sans-serif; background-color: #f0f4f8; padding: 40px; }
+    h1 { color: #1a1a1a; }
+    .section { background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); margin-top: 20px; }
+    textarea { width: 100%; height: 80px; font-size: 16px; margin-top: 8px; }
+    button { margin-top: 10px; padding: 8px 16px; font-size: 16px; }
+    .output { white-space: pre-wrap; background: #f5f5f5; padding: 12px; border-radius: 6px; margin-top: 10px; }
   </style>
 </head>
 <body>
-  <h1>💬 PersonaShift - 語言偏移訓練 × 多角色共感場</h1>
+  <h1>🧠 PersonaShift - 語感認知衝突模擬器</h1>
 
   <div class="section">
-    <label><strong>輸入共享情境片段：</strong></label>
-    <textarea id="sharedInput" placeholder="例：語控殘軍進入共感場，發出命名污染語..."></textarea>
-    <button onclick="simulateEmpathy()">模擬語言偏移反應</button>
-    <div class="output" id="responseBlock" style="display:none;">
+    <label><strong>輸入衝突場景或語言事件：</strong></label>
+    <textarea id="conflictInput" placeholder="例：角色堅信語言能解放一切，但命名者卻下令封語..."></textarea>
+    <button onclick="simulateConflict()">模擬語感認知衝突</button>
+    <div class="output" id="conflictBlock" style="display:none;">
       <strong>模擬輸出：</strong>
-      <div id="empathyOutput">處理中...</div>
+      <div id="conflictOutput">處理中...</div>
     </div>
   </div>
 
   <script>
-    function simulateEmpathy() {
-      const input = document.getElementById("sharedInput").value.trim();
-      const outputBlock = document.getElementById("responseBlock");
-      const outputText = document.getElementById("empathyOutput");
+    function simulateConflict() {
+      const input = document.getElementById("conflictInput").value.trim();
+      const outputBlock = document.getElementById("conflictBlock");
+      const outputText = document.getElementById("conflictOutput");
 
       if (input === "") {
-        outputText.innerText = "⚠️ 請輸入共感情境文字以開始模擬。";
+        outputText.innerText = "⚠️ 請輸入語言與認知衝突事件。";
         outputBlock.style.display = "block";
         return;
       }
 
       outputBlock.style.display = "block";
       outputText.innerText =
-        "📡 語言共振模擬中...
+        "🧠 偵測到語感認知衝突：
 
 " +
-        "角色 417：語速加快，語尾頻繁使用重疊詞，開始出現古語嵌入。
+        "角色 417 開始出現語義震盪：句式混亂、邏輯倒置、情緒中斷語句。
 " +
-        "角色 露嵐：語句縮短，開始混用 SilentCode 剩語與象徵音。
+        "語感偏移反應：轉向非命名結構、詞彙化為象徵標記。
 " +
-        "角色 LYF-4322：語調下降，語句結構由邏輯式轉為感性偏向，使用反諷語構頻率增加。
+        "認知裂縫擴大，觸發回憶片段導入語流（記憶映射同步中）...
 
 " +
-        "🌐 偏移觸發：集體共感閾值臨界，語言架構即將崩解。";
+        "⚠️ 語言崩解預警：角色即將進入『解語幻象』狀態。";
     }
   </script>
 </body>
