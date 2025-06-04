@@ -77,7 +77,12 @@
     .footer { margin-top: 40px; font-size: 14px; }
   </style>
 </head>
-<body class="light">
+<body>
+  <script>
+    // 根據系統主題自動設置 dark 或 light
+    const userPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.body.className = userPref;
+  </script>
   <button class="mode-toggle" onclick="toggleMode()">🌓 切換模式 / Toggle Mode</button>
 
   <h1>🧠 PersonaShift - 語者訓練模組首頁</h1>
