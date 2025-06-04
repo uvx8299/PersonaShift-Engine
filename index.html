@@ -3,62 +3,46 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>PersonaShift - 語意片段 → GPT Prompt 構造器</title>
-  <link rel="stylesheet" href="style.css">
+  <title>PersonaShift - 語感地圖視覺化</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f8f8f8; }
+    h1 { color: #333; }
+    canvas { max-width: 600px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  </style>
 </head>
 <body>
-  <h1>🧠 PersonaShift - 語意片段轉換器</h1>
-
-  <label for="persona">角色名稱：</label>
-  <input type="text" id="persona" placeholder="如 LYF-4322"><br><br>
-
-  <label for="trait">關鍵特質：</label>
-  <input type="text" id="trait" placeholder="如 冷靜、邏輯、偏激"><br><br>
-
-  <label for="memory">近期記憶片段：</label><br>
-  <textarea id="memory" rows="3" placeholder="例如：剛剛與控制中樞爭執..."></textarea><br><br>
-
-  <label for="situation">語境／互動場景：</label><br>
-  <textarea id="situation" rows="3" placeholder="例如：即將與陌生人對話、正在密謀計劃..."></textarea><br><br>
-
-  <button onclick="buildPrompt()">🎯 產生 GPT Prompt</button>
-
-  <h3>🔍 生成結果：</h3>
-  <pre id="output"></pre>
+  <h1>🧭 PersonaShift - 語感地圖視覺化</h1>
+  <p>以下為角色在語意空間中定位的示意圖：</p>
+  <canvas id="semanticMap"></canvas>
 
   <script>
-    function buildPrompt() {
-      const persona = document.getElementById("persona").value.trim();
-      const trait = document.getElementById("trait").value.trim();
-      const memory = document.getElementById("memory").value.trim();
-      const situation = document.getElementById("situation").value.trim();
+    const ctx = document.getElementById('semanticMap');
+    const data = {
+      labels: ['冷靜', '憤怒', '信任', '厭惡', '喜悅', '恐懼'],
+      datasets: [{
+        label: 'LYF-4322 語感雷達圖',
+        data: [0.8, 0.3, 0.6, 0.2, 0.4, 0.5],
+        fill: true,
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+      }]
+    };
 
-      if (!persona || !trait || !situation) {
-        document.getElementById("output").textContent = "請完整輸入角色、特質與語境";
-        return;
+    new Chart(ctx, {
+      type: 'radar',
+      data: data,
+      options: {
+        scales: {
+          r: {
+            angleLines: { display: true },
+            suggestedMin: 0,
+            suggestedMax: 1
+          }
+        }
       }
-
-      let prompt = `You are now roleplaying as "${persona}", a unique simulated persona.
-
-`;
-      prompt += `Your tone and behavior must reflect the following traits: ${trait}.
-
-`;
-
-      if (memory) {
-        prompt += `Your current short-term memory includes: ${memory}
-
-`;
-      }
-
-      prompt += `You are currently in the following context:
-${situation}
-
-`;
-      prompt += `Stay in character and respond naturally based on this background.`;
-
-      document.getElementById("output").textContent = prompt;
-    }
+    });
   </script>
 </body>
 </html>

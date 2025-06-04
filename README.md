@@ -1,16 +1,16 @@
 
-# PersonaShift - 語意片段轉換器
+# PersonaShift - 語感地圖視覺化
 
-🧠 本模組提供一個簡易介面，可將角色資訊 + 記憶片段 + 語境轉為 GPT Prompt。
+🧭 本模組將角色語感（情緒與語意反應）以雷達圖方式視覺化，協助觀察角色在語意空間的分布。
 
 ## 📌 功能
 
-- 輸入角色、人格特質、記憶與情境
-- 自動生成角色風格 Prompt 結構
-- 可直接貼入 ChatGPT / Claude / Gemini 等語言模型
+- 語感維度可客製（如：冷靜、憤怒、信任…）
+- 顯示角色情緒偏好與表現傾向
+- 支援 Chart.js 前端圖表呈現
 
 ## ✅ 使用方式
 
-1. 上傳 index.html + style.css 至 GitHub 專案根目錄或 /docs
-2. 部署 GitHub Pages
-3. 網頁開啟後輸入角色資訊並產生 Prompt
+1. 將 index.html 上傳至 GitHub 專案根目錄或 /docs
+2. 提交至 main 分支並啟用 GitHub Pages
+3. 直接打開網址即可查看語感視覺化圖表
