@@ -38,7 +38,8 @@
 
     .module-card {
       border-radius: 12px;
-      padding: 20px;
+      padding: 0;
+      overflow: hidden;
       transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
     }
 
@@ -56,10 +57,26 @@
       transform: translateY(-5px);
     }
 
-    .module-card h2 { font-size: 20px; margin-bottom: 10px; }
-    .module-card p { font-size: 14px; }
+    .card-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
 
-    .module-card a {
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-content h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      font-size: 14px;
+    }
+
+    .card-content a {
       display: inline-block;
       margin-top: 10px;
       padding: 8px 14px;
@@ -70,7 +87,7 @@
       font-weight: bold;
     }
 
-    .module-card a:hover {
+    .card-content a:hover {
       background-color: #1a5cc8;
     }
 
@@ -78,52 +95,63 @@
   </style>
 </head>
 <body>
-  <script>
-    // 根據系統主題自動設置 dark 或 light
-    const userPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.body.className = userPref;
-  </script>
-  <button class="mode-toggle" onclick="toggleMode()">🌓 切換模式 / Toggle Mode</button>
+<script>
+  const userPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.body.className = userPref;
+</script>
+<button class="mode-toggle" onclick="toggleMode()">🌓 切換模式 / Toggle Mode</button>
 
-  <h1>🧠 PersonaShift - 語者訓練模組首頁</h1>
-  <p class="desc">以下為目前可使用的互動模組。<br><i>All available modules for interactive language simulation are listed below.</i></p>
+<h1>🧠 PersonaShift - 語者訓練模組首頁</h1>
+<p class="desc">以下為目前可使用的互動模組。<br><i>All available modules for interactive language simulation are listed below.</i></p>
 
-  <div class="module-grid">
-    <div class="module-card">
+<div class="module-grid">
+  <div class="module-card">
+    <img src="https://placehold.co/600x160/007BFF/FFFFFF?text=Memory+Timeline" class="card-image" alt="Memory Timeline">
+    <div class="card-content">
       <h2>📘 記憶時間軸導圖<br><small>Memory Timeline</small></h2>
       <p>可視化角色記憶與語感偏移事件順序。</p>
       <a href="MemoryTimeline/">🔗 啟動模組</a>
     </div>
+  </div>
 
-    <div class="module-card">
+  <div class="module-card">
+    <img src="https://placehold.co/600x160/6f42c1/FFFFFF?text=Context+Shift" class="card-image" alt="Context Shift">
+    <div class="card-content">
       <h2>🎭 情境偏移模擬器<br><small>Context Shift Simulator</small></h2>
       <p>根據場景模擬語風與決策偏移。</p>
       <a href="CharacterShiftSimulator/">🔗 啟動模組</a>
     </div>
+  </div>
 
-    <div class="module-card">
+  <div class="module-card">
+    <img src="https://placehold.co/600x160/28a745/FFFFFF?text=Empathic+Field" class="card-image" alt="Empathic Field">
+    <div class="card-content">
       <h2>🌀 語偏 × 共感場<br><small>Language Shift × Empathic Field</small></h2>
       <p>觀察多角色語感交互與偏移語行。</p>
       <a href="LanguageShiftEmpathy/">🔗 啟動模組</a>
     </div>
+  </div>
 
-    <div class="module-card">
+  <div class="module-card">
+    <img src="https://placehold.co/600x160/dc3545/FFFFFF?text=Cognitive+Conflict" class="card-image" alt="Cognitive Conflict">
+    <div class="card-content">
       <h2>⚡ 語感認知衝突模擬器<br><small>Cognitive Conflict</small></h2>
       <p>處理語義信念與現實矛盾時的語感崩解。</p>
       <a href="CognitiveConflict/">🔗 啟動模組</a>
     </div>
   </div>
+</div>
 
-  <p class="footer">
-    📬 聯絡作者：uvx8299@gmail.com<br>
-    GitHub Pages: <a href="https://uvx8299.github.io/PersonaShift-Engine/">https://uvx8299.github.io/PersonaShift-Engine/</a>
-  </p>
+<p class="footer">
+  📬 聯絡作者：uvx8299@gmail.com<br>
+  GitHub Pages: <a href="https://uvx8299.github.io/PersonaShift-Engine/">https://uvx8299.github.io/PersonaShift-Engine/</a>
+</p>
 
-  <script>
-    function toggleMode() {
-      const body = document.body;
-      body.className = body.className === 'dark' ? 'light' : 'dark';
-    }
-  </script>
+<script>
+  function toggleMode() {
+    const body = document.body;
+    body.className = body.className === 'dark' ? 'light' : 'dark';
+  }
+</script>
 </body>
 </html>
