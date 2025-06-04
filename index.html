@@ -38,29 +38,20 @@
 
     .module-card {
       border-radius: 12px;
-      padding: 0;
       overflow: hidden;
-      transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
-    }
-
-    body.light .module-card {
-      background-color: #ffffff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    body.dark .module-card {
-      background-color: #1e1e1e;
-      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+      transition: transform 0.3s ease;
+      position: relative;
     }
 
     .module-card:hover {
-      transform: translateY(-5px);
+      transform: scale(1.03);
     }
 
     .card-image {
       width: 100%;
       height: 160px;
       object-fit: cover;
+      transition: opacity 0.5s ease-in-out;
     }
 
     .card-content {
@@ -91,7 +82,33 @@
       background-color: #1a5cc8;
     }
 
-    .footer { margin-top: 40px; font-size: 14px; }
+    .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      width: 200px;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 6px;
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: opacity 0.3s ease;
+      font-size: 13px;
+    }
+
+    .module-card:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -107,6 +124,7 @@
 <div class="module-grid">
   <div class="module-card">
     <img src="https://placehold.co/600x160/007BFF/FFFFFF?text=Memory+Timeline" class="card-image" alt="Memory Timeline">
+    <div class="tooltip">角色記憶與語感偏移事件時間軸可視化。</div>
     <div class="card-content">
       <h2>📘 記憶時間軸導圖<br><small>Memory Timeline</small></h2>
       <p>可視化角色記憶與語感偏移事件順序。</p>
@@ -116,6 +134,7 @@
 
   <div class="module-card">
     <img src="https://placehold.co/600x160/6f42c1/FFFFFF?text=Context+Shift" class="card-image" alt="Context Shift">
+    <div class="tooltip">根據角色情境模擬語風與選擇偏移。</div>
     <div class="card-content">
       <h2>🎭 情境偏移模擬器<br><small>Context Shift Simulator</small></h2>
       <p>根據場景模擬語風與決策偏移。</p>
@@ -125,6 +144,7 @@
 
   <div class="module-card">
     <img src="https://placehold.co/600x160/28a745/FFFFFF?text=Empathic+Field" class="card-image" alt="Empathic Field">
+    <div class="tooltip">模擬語偏與多角色情緒共感場。</div>
     <div class="card-content">
       <h2>🌀 語偏 × 共感場<br><small>Language Shift × Empathic Field</small></h2>
       <p>觀察多角色語感交互與偏移語行。</p>
@@ -134,6 +154,7 @@
 
   <div class="module-card">
     <img src="https://placehold.co/600x160/dc3545/FFFFFF?text=Cognitive+Conflict" class="card-image" alt="Cognitive Conflict">
+    <div class="tooltip">模擬語感崩解與語義衝突場景反應。</div>
     <div class="card-content">
       <h2>⚡ 語感認知衝突模擬器<br><small>Cognitive Conflict</small></h2>
       <p>處理語義信念與現實矛盾時的語感崩解。</p>
