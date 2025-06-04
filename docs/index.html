@@ -3,54 +3,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PersonaShift API Explorer</title>
+  <title>PersonaShift Engine</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: #333; padding: 40px; }
-    h1 { color: #2c3e50; }
-    .section { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    label { display: block; margin-top: 10px; font-weight: bold; }
-    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
-    button { margin-top: 20px; padding: 10px 20px; font-weight: bold; background: #2c7be5; color: white; border: none; border-radius: 6px; }
-    pre { background: #222; color: #eee; padding: 15px; border-radius: 8px; margin-top: 20px; overflow-x: auto; }
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; }
+    header { background: #1e1e2f; padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 24px; }
+    nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
+    .hero { background: linear-gradient(to right, #2c3e50, #4ca1af); color: white; padding: 80px 30px; text-align: center; }
+    .hero h2 { font-size: 32px; margin: 0 0 15px; }
+    .hero p { font-size: 18px; margin: 0 0 20px; }
+    .hero a { background: white; color: #2c3e50; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px; }
+    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .card h3 { margin-top: 0; }
+    .card a { display: inline-block; margin-top: 10px; background: #2c7be5; color: white; padding: 8px 14px; border-radius: 6px; text-decoration: none; }
+    footer { background: #1e1e2f; color: white; text-align: center; padding: 20px; }
   </style>
 </head>
 <body>
-  <h1>🧠 PersonaShift API Explorer</h1>
-  <div class="section">
-    <label>Character ID:</label>
-    <input type="text" id="charId" value="417" />
 
-    <label>Target:</label>
-    <input type="text" id="target" value="Luran" />
+<header>
+  <h1>PersonaShift Engine</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="api.html">API Docs</a>
+    <a href="#modules">Modules</a>
+  </nav>
+</header>
 
-    <label>Style:</label>
-    <input type="text" id="style" value="inner monologue + external debate" />
+<div class="hero">
+  <h2>Simulate Humanlike AI Behavior</h2>
+  <p>Create, test, and evolve characters with personality shift and memory systems.</p>
+  <a href="index.html">🧠 Try the Explorer</a>
+</div>
 
-    <label>Length (tokens):</label>
-    <input type="number" id="length" value="300" />
-
-    <label>Language:</label>
-    <select id="lang">
-      <option value="en">English</option>
-      <option value="zh">Chinese</option>
-    </select>
-
-    <button onclick="generate()">Generate Request</button>
-    <pre id="output">{}</pre>
+<section id="modules" class="cards">
+  <div class="card">
+    <h3>🧭 API Explorer</h3>
+    <p>Generate simulated dialogue using language, traits, and memory linkage.</p>
+    <a href="index.html">Launch</a>
   </div>
+  <div class="card">
+    <h3>📘 API Reference</h3>
+    <p>View JSON schema and module usage documentation for developers.</p>
+    <a href="api.html">Read Docs</a>
+  </div>
+  <div class="card">
+    <h3>🧠 Memory Timeline</h3>
+    <p>Explore how simulated agents build and retrieve memory events.</p>
+    <a href="MemoryTimeline/index.html">View</a>
+  </div>
+  <div class="card">
+    <h3>🌐 Language Empathy</h3>
+    <p>Discover how language patterns shift with personality and context.</p>
+    <a href="LanguageShiftEmpathy/index.html">Try</a>
+  </div>
+</section>
 
-  <script>
-    function generate() {
-      const req = {
-        task: "generate_dialogue",
-        character_id: document.getElementById("charId").value,
-        target: document.getElementById("target").value,
-        style: document.getElementById("style").value,
-        length: parseInt(document.getElementById("length").value),
-        language: document.getElementById("lang").value
-      };
-      document.getElementById("output").textContent = JSON.stringify(req, null, 2);
-    }
-  </script>
+<footer>
+  <p>Contact: uvx8299@gmail.com | © 2025 PersonaShift Engine | MIT License</p>
+</footer>
+
 </body>
 </html>
