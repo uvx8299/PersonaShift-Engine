@@ -1,9 +1,18 @@
 
-# PersonaShift 多角色模擬器
+# PersonaShift 外部角色模擬器（JSON 版本）
 
-這是一個基礎前端模擬器，用於展示 PersonaShift Engine 如何根據角色設定模擬不同人格反應。
-目前支援角色：
-- LYF-4322：穩定型
-- NX-74：衝動型
+此模擬器展示如何從外部 `characters.json` 檔案載入角色資料，支援多角色與互動邏輯。
 
-可擴充至更多角色，並改為從外部 YAML / JSON 檔案讀取角色設定。
+## 使用方式
+
+1. 在 `characters.json` 中新增角色
+2. 每個角色需包含：
+   - name
+   - type（型別）
+   - mood（情緒）
+   - trust（初始信任值）
+   - trustDelta（信任上升與下降值）
+
+## 未來擴充建議
+- 支援 YAML 格式或動態存檔
+- 情境故事分支展開

@@ -1,0 +1,17 @@
+
+{
+  "LYF-4322": {
+    "name": "LYF-4322",
+    "type": "穩定型",
+    "mood": "穩定",
+    "trust": 50,
+    "trustDelta": { "positive": 15, "negative": -10 }
+  },
+  "NX-74": {
+    "name": "NX-74",
+    "type": "衝動型",
+    "mood": "不安",
+    "trust": 30,
+    "trustDelta": { "positive": 10, "negative": -20 }
+  }
+}
