@@ -3,24 +3,62 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>PersonaShift - 敘事事件模擬器</title>
+  <title>PersonaShift - 語意片段 → GPT Prompt 構造器</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎭 PersonaShift - 敘事事件模擬器</h1>
+  <h1>🧠 PersonaShift - 語意片段轉換器</h1>
 
-  <label for="characterSelect">選擇角色：</label>
-  <select id="characterSelect"></select>
+  <label for="persona">角色名稱：</label>
+  <input type="text" id="persona" placeholder="如 LYF-4322"><br><br>
 
-  <label for="eventSelect">選擇事件：</label>
-  <select id="eventSelect"></select>
+  <label for="trait">關鍵特質：</label>
+  <input type="text" id="trait" placeholder="如 冷靜、邏輯、偏激"><br><br>
 
-  <br><br>
-  <button onclick="simulate()">🚀 模擬事件</button>
+  <label for="memory">近期記憶片段：</label><br>
+  <textarea id="memory" rows="3" placeholder="例如：剛剛與控制中樞爭執..."></textarea><br><br>
 
-  <h3>🧬 敘事模擬輸出：</h3>
+  <label for="situation">語境／互動場景：</label><br>
+  <textarea id="situation" rows="3" placeholder="例如：即將與陌生人對話、正在密謀計劃..."></textarea><br><br>
+
+  <button onclick="buildPrompt()">🎯 產生 GPT Prompt</button>
+
+  <h3>🔍 生成結果：</h3>
   <pre id="output"></pre>
 
-  <script src="narrative_simulator.js"></script>
+  <script>
+    function buildPrompt() {
+      const persona = document.getElementById("persona").value.trim();
+      const trait = document.getElementById("trait").value.trim();
+      const memory = document.getElementById("memory").value.trim();
+      const situation = document.getElementById("situation").value.trim();
+
+      if (!persona || !trait || !situation) {
+        document.getElementById("output").textContent = "請完整輸入角色、特質與語境";
+        return;
+      }
+
+      let prompt = `You are now roleplaying as "${persona}", a unique simulated persona.
+
+`;
+      prompt += `Your tone and behavior must reflect the following traits: ${trait}.
+
+`;
+
+      if (memory) {
+        prompt += `Your current short-term memory includes: ${memory}
+
+`;
+      }
+
+      prompt += `You are currently in the following context:
+${situation}
+
+`;
+      prompt += `Stay in character and respond naturally based on this background.`;
+
+      document.getElementById("output").textContent = prompt;
+    }
+  </script>
 </body>
 </html>
