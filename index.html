@@ -3,11 +3,11 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>PersonaShift - 語氣模擬系統</title>
+    <title>PersonaShift - 敘事分支引擎</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🎭 PersonaShift Engine - 語氣模擬系統</h1>
+    <h1>📜 PersonaShift Engine - 敘事分支模擬</h1>
     <div>
         <label for="character">選擇角色：</label>
         <select id="character" onchange="loadCharacter()"></select>
@@ -21,12 +21,13 @@
     </div>
 
     <div id="actions">
-        <h3>觸發互動事件</h3>
-        <button onclick="changeMood('壓力事件')">💥 壓力事件</button>
-        <button onclick="changeMood('支持事件')">🌱 支援鼓勵</button>
+        <h3>互動選項</h3>
+        <button onclick="triggerEvent('support')">🌱 支持角色</button>
+        <button onclick="triggerEvent('doubt')">⚠ 製造懷疑</button>
+        <button onclick="triggerEvent('betray')">💔 背叛角色</button>
     </div>
 
-    <div id="log"></div>
+    <div id="story"></div>
     <script src="script.js"></script>
 </body>
 </html>

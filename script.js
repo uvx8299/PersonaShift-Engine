@@ -24,7 +24,7 @@ function loadCharacter() {
     document.getElementById("mood").innerText = info.mood;
     document.getElementById("trust").innerText = info.trust;
     document.getElementById("tone").innerText = getTone(info);
-    document.getElementById("log").innerHTML = "<p>已載入角色：" + current + "</p>";
+    document.getElementById("story").innerHTML = `<p>角色 ${current} 正在等待你的選擇。</p>`;
 }
 
 function getTone(info) {
@@ -34,20 +34,26 @@ function getTone(info) {
     return "攻擊性、諷刺";
 }
 
-function changeMood(event) {
+function triggerEvent(type) {
     let info = characters[current];
-    let log = document.getElementById("log");
-    if (event === "壓力事件") {
-        info.trust += info.trustDelta.negative;
-        info.mood = "焦慮";
-        log.innerHTML += `<p><b>[${current}]</b> 遭遇壓力：<i>"你為什麼老是這樣？"</i></p>`;
-    } else if (event === "支持事件") {
+    let storyDiv = document.getElementById("story");
+    let result = "";
+    if (type === "support") {
         info.trust += info.trustDelta.positive;
-        info.mood = "穩定";
-        log.innerHTML += `<p><b>[${current}]</b> 感受到支持：<i>"謝謝你，我好像好多了。"</i></p>`;
+        info.mood = "感激";
+        result = `<b>[${current}]</b>：「我知道你一直都在，我會記住這份溫暖。」`;
+    } else if (type === "doubt") {
+        info.trust += Math.floor(info.trustDelta.negative / 2);
+        info.mood = "懷疑";
+        result = `<b>[${current}]</b>：「你是不是還有其他打算？」`;
+    } else if (type === "betray") {
+        info.trust += info.trustDelta.negative * 2;
+        info.mood = "背叛";
+        result = `<b>[${current}]</b>：「我再也不會相信你了！」`;
     }
     info.trust = Math.max(0, Math.min(info.trust, 100));
     document.getElementById("mood").innerText = info.mood;
     document.getElementById("trust").innerText = info.trust;
     document.getElementById("tone").innerText = getTone(info);
+    storyDiv.innerHTML = `<p>${result}</p>`;
 }
