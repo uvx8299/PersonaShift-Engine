@@ -1,6 +1,7 @@
 
 let characters = {};
 let current = "";
+let memory = {};
 
 fetch('characters.json')
   .then(response => response.json())
@@ -19,12 +20,14 @@ fetch('characters.json')
 
 function loadCharacter() {
     current = document.getElementById("character").value;
+    if (!memory[current]) memory[current] = [];
     let info = characters[current];
     document.getElementById("charName").innerText = "角色：" + current;
     document.getElementById("mood").innerText = info.mood;
     document.getElementById("trust").innerText = info.trust;
     document.getElementById("tone").innerText = getTone(info);
-    document.getElementById("story").innerHTML = `<p>角色 ${current} 正在等待你的選擇。</p>`;
+    document.getElementById("log").innerHTML = `<p>已載入角色：${current}</p>`;
+    renderMemory();
 }
 
 function getTone(info) {
@@ -36,24 +39,42 @@ function getTone(info) {
 
 function triggerEvent(type) {
     let info = characters[current];
-    let storyDiv = document.getElementById("story");
-    let result = "";
+    let story = "";
+    let eventLabel = "";
     if (type === "support") {
         info.trust += info.trustDelta.positive;
         info.mood = "感激";
-        result = `<b>[${current}]</b>：「我知道你一直都在，我會記住這份溫暖。」`;
+        story = `「我知道你一直都在，我會記住這份溫暖。」`;
+        eventLabel = "獲得支持";
     } else if (type === "doubt") {
         info.trust += Math.floor(info.trustDelta.negative / 2);
         info.mood = "懷疑";
-        result = `<b>[${current}]</b>：「你是不是還有其他打算？」`;
+        story = `「你是不是還有其他打算？」`;
+        eventLabel = "產生懷疑";
     } else if (type === "betray") {
         info.trust += info.trustDelta.negative * 2;
         info.mood = "背叛";
-        result = `<b>[${current}]</b>：「我再也不會相信你了！」`;
+        story = `「我再也不會相信你了！」`;
+        eventLabel = "遭受背叛";
     }
+
     info.trust = Math.max(0, Math.min(info.trust, 100));
     document.getElementById("mood").innerText = info.mood;
     document.getElementById("trust").innerText = info.trust;
     document.getElementById("tone").innerText = getTone(info);
-    storyDiv.innerHTML = `<p>${result}</p>`;
+    document.getElementById("log").innerHTML = `<p><b>[${current}]</b>：${story}</p>`;
+
+    memory[current].unshift(`事件：${eventLabel}（信任=${info.trust}，情緒=${info.mood}）`);
+    if (memory[current].length > 5) memory[current].pop();
+    renderMemory();
+}
+
+function renderMemory() {
+    let memoryLog = document.getElementById("memory-log");
+    memoryLog.innerHTML = "";
+    memory[current].forEach(item => {
+        let li = document.createElement("li");
+        li.innerText = item;
+        memoryLog.appendChild(li);
+    });
 }

@@ -3,11 +3,11 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>PersonaShift - 敘事分支引擎</title>
+    <title>PersonaShift - 記憶模擬系統</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>📜 PersonaShift Engine - 敘事分支模擬</h1>
+    <h1>🧠 PersonaShift Engine - 記憶模擬系統</h1>
     <div>
         <label for="character">選擇角色：</label>
         <select id="character" onchange="loadCharacter()"></select>
@@ -27,7 +27,12 @@
         <button onclick="triggerEvent('betray')">💔 背叛角色</button>
     </div>
 
-    <div id="story"></div>
+    <div id="memory">
+        <h3>🧠 記憶欄位</h3>
+        <ul id="memory-log"></ul>
+    </div>
+
+    <div id="log"></div>
     <script src="script.js"></script>
 </body>
 </html>
