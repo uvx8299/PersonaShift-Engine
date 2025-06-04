@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>PersonaShift - 角色情境偏移模擬器</title>
+  <style>
+    body { font-family: sans-serif; padding: 40px; background-color: #f6f6f6; color: #333; }
+    h1 { color: #222; }
+    .scenario, .output { margin-top: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    textarea { width: 100%; height: 100px; font-size: 16px; }
+    button { margin-top: 10px; padding: 10px 20px; font-size: 16px; }
+    pre { background: #f0f0f0; padding: 15px; border-radius: 6px; white-space: pre-wrap; word-wrap: break-word; }
+  </style>
+</head>
+<body>
+  <h1>🌀 PersonaShift - 角色情境偏移模擬器</h1>
+
+  <div class="scenario">
+    <label for="situation"><strong>輸入情境描述：</strong></label><br>
+    <textarea id="situation" placeholder="例：LYF-4322 被困於語感遮蔽區，與SilentCode失聯..."></textarea><br>
+    <button onclick="simulateShift()">模擬人格偏移反應</button>
+  </div>
+
+  <div class="output" id="response" style="display:none;">
+    <strong>模擬反應輸出：</strong>
+    <pre id="outputText">模擬中...</pre>
+  </div>
+
+  <script>
+    function simulateShift() {
+      const input = document.getElementById("situation").value.trim();
+      const output = document.getElementById("outputText");
+      const block = document.getElementById("response");
+      if (input === "") {
+        output.innerText = "請輸入情境描述以開始模擬。";
+        block.style.display = "block";
+        return;
+      }
+
+      block.style.display = "block";
+      output.innerText = "模擬中...（AI 串接功能將於未來版本整合）\n\n🔧 暫時回傳靜態模擬結果：\n" +
+        "- 情緒偏移：警戒 → 混亂\n" +
+        "- 決策傾向：從謹慎轉向衝動\n" +
+        "- 語言行為：由分析句轉為短促指令式語言\n" +
+        "- 記憶觸發：SilentCode 關鍵聲源重現";
+    }
+  </script>
+</body>
+</html>

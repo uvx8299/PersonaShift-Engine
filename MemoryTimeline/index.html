@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>PersonaShift - 記憶時間軸導圖</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 30px; background: #f0f0f0; color: #333; }
+    h1 { color: #222; }
+    canvas { max-width: 900px; margin: 0 auto; background: #fff; padding: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.08); }
+  </style>
+</head>
+<body>
+  <h1>🧠 PersonaShift - 記憶時間軸導圖</h1>
+  <p>展示角色過去關鍵記憶事件與時間順序對應的記憶強度。</p>
+  <canvas id="timelineChart"></canvas>
+
+  <script>
+    const ctx = document.getElementById('timelineChart');
+    const data = {
+      labels: ['創生階段', '初遇語者', '供體錯誤案', '語控暴露', 'SilentCode甦醒', '語感共振實驗'],
+      datasets: [{
+        label: 'LYF-4322 記憶強度時間軸',
+        data: [0.3, 0.6, 0.9, 0.7, 0.95, 0.8],
+        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        tension: 0.4,
+        fill: true
+      }]
+    };
+
+    new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            suggestedMax: 1
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
