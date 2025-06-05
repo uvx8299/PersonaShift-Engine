@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>PersonaShift 模擬器展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; background: #121212; color: #f0f0f0; margin: 0; padding: 2em; }
+        h1 { color: #00e5ff; }
+        .grid { display: flex; flex-wrap: wrap; gap: 1em; }
+        .card {
+            background: #1e1e1e;
+            flex: 1 1 calc(50% - 1em);
+            padding: 1.2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+            min-width: 300px;
+        }
+        .card h2 { color: #00e5ff; margin-top: 0.2em; }
+        .card p { font-size: 0.95em; line-height: 1.5em; }
+        button {
+            background: #00e5ff;
+            color: #000;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            margin-top: 0.5em;
+            cursor: pointer;
+        }
+        .output-box {
+            background: #222;
+            color: #9ef;
+            padding: 0.8em;
+            border-radius: 8px;
+            margin-top: 1em;
+            white-space: pre-wrap;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>PersonaShift Engine 模擬模組展示</h1>
+    <p>點選模組以模擬該角色功能。</p>
+
+    <div class="grid">
+        <div class="card">
+            <h2>語氣模擬系統<br><small>Tone Simulation</small></h2>
+            <p>模擬角色語氣風格偏移，呈現冷靜、情緒化、壓抑、激進等語言差異。</p>
+            <button onclick="simulateTone()">啟動模擬</button>
+            <div id="toneOutput" class="output-box"></div>
+        </div>
+
+        <div class="card">
+            <h2>記憶模擬器<br><small>Memory Simulator</small></h2>
+            <p>模擬角色的記憶碎片與情境連結，呈現記憶啟動時的語言表現。</p>
+            <button onclick="simulateMemory()">啟動模擬</button>
+            <div id="memoryOutput" class="output-box"></div>
+        </div>
+
+        <div class="card">
+            <h2>偏好圖譜<br><small>Preference Mapping</small></h2>
+            <p>顯示角色在食物、情感、戰略等面向的偏好程度與行動傾向。</p>
+            <button onclick="simulatePreference()">啟動模擬</button>
+            <div id="preferenceOutput" class="output-box"></div>
+        </div>
+
+        <div class="card">
+            <h2>GPT語境整合模組<br><small>GPT Context Integration</small></h2>
+            <p>將角色內部狀態整合進語境，生成偏移語言結果。</p>
+            <button onclick="simulateGPT()">啟動模擬</button>
+            <div id="gptOutput" class="output-box"></div>
+        </div>
+    </div>
+
+    <script>
+        function simulateTone() {
+            document.getElementById('toneOutput').innerText = '語氣：壓抑 × 哀傷\n語句：「你說，我們還能被理解嗎？」';
+        }
+        function simulateMemory() {
+            document.getElementById('memoryOutput').innerText = '記憶載入：fragment_0235.json\n「我記得，那個名字是從禁語中摘下來的。」';
+        }
+        function simulatePreference() {
+            document.getElementById('preferenceOutput').innerText = '偏好分析：\n• 喜好：語音共振食物（87%）\n• 厭惡：無感觸輸出命令（92%）';
+        }
+        function simulateGPT() {
+            document.getElementById('gptOutput').innerText = '語境整合：\n「當記憶變得模糊，我們是否仍能保有語感的真實？」';
+        }
+    </script>
+</body>
+</html>
