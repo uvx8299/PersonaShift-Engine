@@ -1,102 +1,234 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>PersonaShift Engine 模組展示</title>
+  <title>PersonaShift Engine 展示頁</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #1e1e1e;
-      color: #f0f0f0;
+      font-family: "Noto Sans", sans-serif;
+      background-color: #111;
+      color: #fff;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
-    h1 {
+    .header {
+      background: #222;
+      padding: 20px;
       text-align: center;
-      margin-bottom: 30px;
+      font-size: 28px;
+      border-bottom: 2px solid #333;
     }
     .grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      padding: 20px;
     }
     .card {
-      background-color: #2c2c2c;
-      border-radius: 10px;
+      background: #1c1c1c;
+      margin: 10px;
       padding: 20px;
+      border: 1px solid #333;
+      border-radius: 8px;
       width: 300px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: scale(1.03);
+      text-align: center;
+      box-shadow: 0 0 8px rgba(255,255,255,0.05);
     }
     .card h2 {
-      margin-top: 0;
-      color: #76d7c4;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
     .card p {
-      font-size: 0.95em;
+      font-size: 14px;
+      color: #ccc;
     }
-    .simulate-btn {
+    .module-buttons {
       margin-top: 10px;
-      padding: 8px 12px;
+    }
+    .module-buttons button {
+      margin: 4px;
+      padding: 6px 12px;
+      background-color: #444;
+      color: #fff;
       border: none;
-      border-radius: 5px;
-      background-color: #3498db;
-      color: white;
+      border-radius: 4px;
       cursor: pointer;
     }
-    .simulate-btn:hover {
-      background-color: #2980b9;
+    .module-buttons button:hover {
+      background-color: #666;
     }
   </style>
 </head>
 <body>
-  <h1>PersonaShift Engine 模組展示</h1>
+  <div class="header">PersonaShift Engine 模組展示頁</div>
   <div class="grid">
+
     <div class="card">
       <h2>語氣模擬系統<br><small>Tone Simulation</small></h2>
       <p>模擬角色在不同語境下的語氣轉變。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
     </div>
+    
     <div class="card">
-      <h2>記憶模擬器<br><small>Memory Simulator</small></h2>
-      <p>儲存並重構角色的記憶軌跡。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <h2>記憶模擬系統<br><small>Memory Simulation</small></h2>
+      <p>模擬角色過往經驗對當前行為的影響。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
     </div>
+    
     <div class="card">
-      <h2>偏好圖譜<br><small>Preference Map</small></h2>
-      <p>建立角色的偏好傾向與行為選擇參考。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <h2>模組 GPT/AI 語境整合<br><small>GPT Context Integration</small></h2>
+      <p>與 LLM 模型接軌的語境資料整合模組。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
     </div>
+    
     <div class="card">
-      <h2>GPT語境整合<br><small>GPT Context Link</small></h2>
-      <p>結合 GPT 回應模型與模擬器語境。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <h2>偏好圖譜<br><small>Preference Mapping</small></h2>
+      <p>建立角色個別偏好與選擇傾向之圖譜。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
     </div>
+    
     <div class="card">
-      <h2>儲存模組<br><small>Persistence Module</small></h2>
-      <p>將角色行為與偏移狀態永久儲存。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <h2>儲存模擬器<br><small>Save State Simulator</small></h2>
+      <p>模擬角色狀態儲存與恢復的系統。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
     </div>
+    
     <div class="card">
-      <h2>人格偏移歷程<br><small>Personality Shift History</small></h2>
-      <p>視覺化角色歷次人格偏移事件與時間序列。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <h2>GPT 串接模版<br><small>GPT Prompt Template</small></h2>
+      <p>提供與外部語言模型串接所需的語法與格式。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
     </div>
+    
     <div class="card">
-      <h2>語言偏移訓練<br><small>Linguistic Shift Trainer</small></h2>
-      <p>訓練角色語言使用方式與語感演化。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <h2>人格偏移歷程可視化<br><small>Persona Shift Visualization</small></h2>
+      <p>將角色人格變化以圖形方式呈現。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
     </div>
+    
     <div class="card">
-      <h2>多角色共感場<br><small>Multi-Agent Empathic Space</small></h2>
-      <p>模擬多角色在共感語場中的情緒交互。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <h2>敘事事件模擬器<br><small>Narrative Event Simulator</small></h2>
+      <p>模擬角色參與不同事件之情境邏輯。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
     </div>
+    
+    <div class="card">
+      <h2>語感認知衝突模擬器<br><small>Semantic Conflict Simulator</small></h2>
+      <p>處理角色語感上的認知衝突與反應。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>角色行為風格分析<br><small>Behavior Style Analyzer</small></h2>
+      <p>分析角色語言與行動風格傾向。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>記憶時間軸導圖<br><small>Memory Timeline Mapper</small></h2>
+      <p>重建角色經歷的時間線與記憶段。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>角色情境偏移模擬器<br><small>Situation Shift Engine</small></h2>
+      <p>模擬角色在不同場景下的反應變化。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>語言偏移訓練 × 多角色共感場<br><small>Multicharacter Empathy Training</small></h2>
+      <p>語言偏移與共感能力的多角色訓練模組。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>子模組 A–F<br><small>Modules A–F</small></h2>
+      <p>行為偏移、反饋迴圈與多角色決策子系統。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>語者訓練整合包<br><small>Speaker Training Suite</small></h2>
+      <p>整合多模組語者訓練的一鍵總成模組。</p>
+      <div class="module-buttons">
+        <button>🧪 啟動模擬</button>
+        <button>🔁 隨機角色互動</button>
+        <button>📄 模組說明</button>
+        <button>📤 匯出資料</button>
+      </div>
+    </div>
+    
   </div>
 </body>
 </html>
