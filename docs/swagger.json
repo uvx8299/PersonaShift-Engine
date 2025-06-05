@@ -1,0 +1,41 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "PersonaShift API",
+    "version": "1.0.0",
+    "description": "API for interacting with PersonaShift Engine modules."
+  },
+  "paths": {
+    "/simulate": {
+      "post": {
+        "summary": "Run simulation on a module",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "module": {
+                    "type": "string"
+                  },
+                  "parameters": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "module"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Simulation result"
+          }
+        }
+      }
+    }
+  }
+}
