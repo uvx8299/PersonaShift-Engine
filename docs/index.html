@@ -114,5 +114,54 @@
   });
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".card");
+  const sampleDialogue = [
+    "我準備好了，來吧！",
+    "你真的相信這是唯一的選擇嗎？",
+    "讓我們再想一次。",
+    "這是我一直在等待的時刻。",
+    "別擔心，一切都在掌握中。"
+  ];
+
+  cards.forEach((card, index) => {
+    const buttons = card.querySelectorAll(".module-buttons button");
+    if (buttons.length === 4) {
+      // 啟動模擬
+      buttons[0].addEventListener("click", () => {
+        const moduleName = card.querySelector("h2").innerText;
+        alert(`🧪 已啟動模組：\n${moduleName}`);
+      });
+
+      // 隨機角色互動
+      buttons[1].addEventListener("click", () => {
+        const msg = sampleDialogue[Math.floor(Math.random() * sampleDialogue.length)];
+        alert(`🔁 角色互動觸發：\n${msg}`);
+      });
+
+      // 說明按鈕已內建 href，略過此步
+
+      // 匯出 JSON 模擬資料
+      buttons[3].addEventListener("click", () => {
+        const moduleId = "module_" + (index + 1);
+        const jsonData = {
+          id: moduleId,
+          name: card.querySelector("h2").innerText,
+          timestamp: new Date().toISOString(),
+          status: "mock_export"
+        };
+        const blob = new Blob([JSON.stringify(jsonData, null, 2)], {type : 'application/json'});
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = moduleId + ".json";
+        link.click();
+      });
+    }
+  });
+});
+</script>
+
 </body>
 </html>
