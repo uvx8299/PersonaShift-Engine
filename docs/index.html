@@ -1,167 +1,57 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>PersonaShift Engine 模組展示</title>
+  <meta charset="utf-8">
+  <title>PersonaShift Engine 展示首頁</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-      margin: 0;
+      font-family: sans-serif;
+      background: #f5f5f5;
       padding: 20px;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .grid {
+    .card-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+      gap: 16px;
     }
     .card {
-      background-color: #2c2c2c;
-      border-radius: 10px;
-      padding: 20px;
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
       width: 300px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    .card h2 {
+    .card h3 {
       margin-top: 0;
-      color: #76d7c4;
     }
-    .card p {
-      font-size: 0.95em;
-    }
-    .simulate-btn {
+    .button {
+      display: inline-block;
       margin-top: 10px;
       padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
-      background-color: #3498db;
+      background-color: #007acc;
       color: white;
-      cursor: pointer;
+      text-decoration: none;
+      border-radius: 4px;
     }
-    .simulate-btn:hover {
-      background-color: #2980b9;
+    .button:hover {
+      background-color: #005fa3;
     }
   </style>
 </head>
 <body>
-  <h1>PersonaShift Engine 模組展示</h1>
-  <div class="grid">
+  <h1>PersonaShift Engine 模組展示頁</h1>
+  <div class="card-container">
     <div class="card">
-      <h2>語氣模擬系統<br><small>Tone Simulation</small></h2>
-      <p>模擬角色在不同語境下的語氣轉變。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <h3>🧠 模擬器總覽</h3>
+      <p>進入模組選擇頁面，探索各種人格與敘事模擬模組。</p>
+      <a href="simulator.html" class="button">前往模擬器</a>
     </div>
     <div class="card">
-      <h2>記憶模擬器<br><small>Memory Simulator</small></h2>
-      <p>儲存並重構角色的記憶軌跡。</p>
-      <button class="simulate-btn">啟動模擬</button>
-    </div>
-    <div class="card">
-      <h2>偏好圖譜<br><small>Preference Map</small></h2>
-      <p>建立角色的偏好傾向與行為選擇參考。</p>
-      <button class="simulate-btn">啟動模擬</button>
-    </div>
-    <div class="card">
-      <h2>GPT語境整合<br><small>GPT Context Link</small></h2>
-      <p>結合 GPT 回應模型與模擬器語境。</p>
-      <button class="simulate-btn">啟動模擬</button>
-    </div>
-    <div class="card">
-      <h2>儲存模組<br><small>Persistence Module</small></h2>
-      <p>將角色行為與偏移狀態永久儲存。</p>
-      <button class="simulate-btn">啟動模擬</button>
-    </div>
-    <div class="card">
-      <h2>人格偏移歷程<br><small>Personality Shift History</small></h2>
-      <p>視覺化角色歷次人格偏移事件與時間序列。</p>
-      <button class="simulate-btn">啟動模擬</button>
-    </div>
-    <div class="card">
-      <h2>語言偏移訓練<br><small>Linguistic Shift Trainer</small></h2>
-      <p>訓練角色語言使用方式與語感演化。</p>
-      <button class="simulate-btn">啟動模擬</button>
-    </div>
-    <div class="card">
-      <h2>多角色共感場<br><small>Multi-Agent Empathic Space</small></h2>
-      <p>模擬多角色在共感語場中的情緒交互。</p>
-      <button class="simulate-btn">啟動模擬</button>
+      <h3>🔗 API 模擬器</h3>
+      <p>使用 Swagger UI 互動式測試 PersonaShift Engine 模組。</p>
+      <a href="api.html" class="button">前往 API 模擬器</a>
     </div>
   </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((card, index) => {
-      const buttons = card.querySelectorAll(".module-buttons button");
-      if (buttons.length === 4) {
-        buttons[0].addEventListener("click", () => alert(`🧪 模組 ${index + 1} 啟動模擬`));
-        buttons[1].addEventListener("click", () => alert(`🔁 模組 ${index + 1} 角色互動觸發`));
-        buttons[2].addEventListener("click", () => alert(`📄 模組 ${index + 1} 說明連結尚未設置`));
-        buttons[3].addEventListener("click", () => alert(`📤 模組 ${index + 1} 匯出資料尚未開啟`));
-      }
-    });
-  });
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelectorAll(".card");
-  const sampleDialogue = [
-    "我準備好了，來吧！",
-    "你真的相信這是唯一的選擇嗎？",
-    "讓我們再想一次。",
-    "這是我一直在等待的時刻。",
-    "別擔心，一切都在掌握中。"
-  ];
-
-  cards.forEach((card, index) => {
-    const buttons = card.querySelectorAll(".module-buttons button");
-    if (buttons.length === 4) {
-      // 啟動模擬
-      buttons[0].addEventListener("click", () => {
-        const moduleName = card.querySelector("h2").innerText;
-        alert(`🧪 已啟動模組：\n${moduleName}`);
-      });
-
-      // 隨機角色互動
-      buttons[1].addEventListener("click", () => {
-        const msg = sampleDialogue[Math.floor(Math.random() * sampleDialogue.length)];
-        alert(`🔁 角色互動觸發：\n${msg}`);
-      });
-
-      // 說明按鈕已內建 href，略過此步
-
-      // 匯出 JSON 模擬資料
-      buttons[3].addEventListener("click", () => {
-        const moduleId = "module_" + (index + 1);
-        const jsonData = {
-          id: moduleId,
-          name: card.querySelector("h2").innerText,
-          timestamp: new Date().toISOString(),
-          status: "mock_export"
-        };
-        const blob = new Blob([JSON.stringify(jsonData, null, 2)], {type : 'application/json'});
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = moduleId + ".json";
-        link.click();
-      });
-    }
-  });
-});
-</script>
-
 </body>
 </html>
