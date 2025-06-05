@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PersonaShift 模擬器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; background: #121212; color: #f0f0f0; margin: 0; padding: 2em; }
+        h1 { color: #00e5ff; }
+        .module-card { background: #1e1e1e; padding: 1em; margin: 1em 0; border-radius: 10px; box-shadow: 0 0 10px #333; }
+        .module-card button { background: #00e5ff; color: #000; border: none; padding: 0.5em 1em; border-radius: 5px; cursor: pointer; }
+        .output-box { background: #222; padding: 1em; border-radius: 8px; margin-top: 1em; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>PersonaShift 模擬器</h1>
+    <p>選擇一個模組並啟動模擬。</p>
+
+    <div class="module-card">
+        <h2>角色語氣模擬器</h2>
+        <button onclick="simulateTone()">啟動模擬</button>
+        <div id="toneOutput" class="output-box"></div>
+    </div>
+
+    <div class="module-card">
+        <h2>記憶模擬器</h2>
+        <button onclick="simulateMemory()">啟動模擬</button>
+        <div id="memoryOutput" class="output-box"></div>
+    </div>
+
+    <script>
+        function simulateTone() {
+            document.getElementById('toneOutput').innerText = '模擬角色語氣中...
+角色：L-973
+語氣：憂鬱 × 冷靜
+輸出語句：「我不想再看見這片荒原的倒影...」';
+        }
+
+        function simulateMemory() {
+            document.getElementById('memoryOutput').innerText = '載入記憶模組...
+角色：K-512
+記憶片段：「他曾在那場語權戰中失去了名字。」';
+        }
+    </script>
+</body>
+</html>
