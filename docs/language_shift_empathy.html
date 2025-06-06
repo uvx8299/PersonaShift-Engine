@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>LanguageShiftEmpathy 語言偏移 × 共感模擬器</title>
+    <style>
+        body {{
+            font-family: "Noto Sans TC", sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            padding: 2rem;
+        }}
+        .card {{
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 8px rgba(0,0,0,0.4);
+        }}
+        button {{
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }}
+        pre {{
+            background: #333;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow: auto;
+        }}
+    </style>
+</head>
+<body>
+
+<h1>🧠 LanguageShiftEmpathy 語言偏移 × 共感模擬器</h1>
+
+<div class="card">
+    <p>此模組用於模擬角色在語言偏移過程中產生的情感共鳴與語意張力變化。</p>
+    <button onclick="simulate()">🔄 啟動模擬</button>
+    <button onclick="preview()">👁 預覽結果</button>
+    <pre id="output"></pre>
+</div>
+
+<script>
+function simulate() {{
+    const simulationData = {{
+        role: "觀察者Ａ",
+        languageShift: "從中性語氣轉為情感投射語氣",
+        triggerWord: "你為什麼還在這裡？",
+        empathyResponse: "因為我曾經也是那樣被留下的。",
+        emotionDetected: "悲傷 × 理解"
+    }};
+    document.getElementById("output").textContent = JSON.stringify(simulationData, null, 2);
+}}
+
+function preview() {{
+    const sentence = "觀察者Ａ語氣改變，面對『你為什麼還在這裡？』這句話，他用帶著悲傷的語氣回答：「因為我曾經也是那樣被留下的。」";
+    document.getElementById("output").textContent = sentence;
+}}
+</script>
+
+</body>
+</html>
