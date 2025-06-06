@@ -1,31 +1,42 @@
 
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <title>PersonaShift Engine 模組展示頁</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
-        h1 { color: #333; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; }
-        a { background: #fff; padding: 12px 16px; display: block; text-decoration: none; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #0073e6; font-weight: bold; }
-        a:hover { background: #e6f0ff; }
-    </style>
+  <meta charset="UTF-8">
+  <title>PersonaShift Engine 展示首頁</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>📱 PersonaShift Engine 模組展示（手機版）</h1>
+  <aside class="sidebar">
+    <h2>模組清單</h2>
     <ul>
-        <li><a href="modules/memory-sim.html">Memory Sim</a></li>
-        <li><a href="modules/tone-sim.html">Tone Sim</a></li>
-        <li><a href="modules/preference-map.html">Preference Map</a></li>
-        <li><a href="modules/save-sim.html">Save Sim</a></li>
-        <li><a href="modules/gpt-template.html">Gpt Template</a></li>
-        <li><a href="modules/persona-shift-viz.html">Persona Shift Viz</a></li>
-        <li><a href="modules/narrative-sim.html">Narrative Sim</a></li>
-        <li><a href="modules/sem-conflict-sim.html">Sem Conflict Sim</a></li>
-
+      <li><a href="memory-sim.html">記憶模擬器</a></li>
+      <li><a href="tone-sim.html">語氣模擬系統</a></li>
+      <li><a href="mobile_index.html">📱 手機展示頁</a></li>
     </ul>
+  </aside>
+  <main class="content">
+    <h1>PersonaShift Engine 模組展示</h1>
+    <div class="module-grid">
+      <div class="module-card">
+        <img src="assets/memory.png" alt="記憶模擬器">
+        <h3>記憶模擬器</h3>
+        <p>模擬角色記憶形成、提取與偏移歷程。</p>
+        <a href="memory-sim.html" class="button">進入</a>
+      </div>
+      <div class="module-card">
+        <img src="assets/tone.png" alt="語氣模擬系統">
+        <h3>語氣模擬系統</h3>
+        <p>輸入一句話，切換多種語氣風格輸出方式。</p>
+        <a href="tone-sim.html" class="button">進入</a>
+      </div>
+      <div class="module-card">
+        <img src="assets/mobile-thumb.png" alt="Mobile UI">
+        <h3>📱 手機展示頁</h3>
+        <p>展示適用於行動裝置的模組互動與介面設計。</p>
+        <a href="mobile_index.html" class="button">進入</a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
