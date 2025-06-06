@@ -1,1 +1,31 @@
-<!DOCTYPE html><html><head><title>記憶模擬系統</title></head><body><h1>記憶模擬系統</h1><p>展示角色記憶內容與類型標註。</p></body></html>
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>記憶模擬器</title>
+  <style>
+    body { font-family: sans-serif; padding: 1em; }
+    h1 { color: #333; }
+    textarea, input, button { width: 100%; margin-top: 0.5em; padding: 0.5em; }
+    .output { border: 1px solid #ccc; padding: 1em; margin-top: 1em; background: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <h1>記憶模擬器</h1>
+  <p>模擬角色記憶儲存、喚醒與情境觸發。</p>
+  <textarea rows="4" placeholder="輸入測試資料..."></textarea>
+  <button onclick="simulate()">執行模擬</button>
+  <div class="output" id="output">模擬結果將顯示於此。</div>
+
+  <script>
+    function simulate() {
+      const input = document.querySelector("textarea").value;
+      document.getElementById("output").innerText = "模擬中...
+
+" + input;
+    }
+  </script>
+</body>
+</html>
