@@ -1,163 +1,57 @@
 
 <!DOCTYPE html>
 
-<html lang="zh-TW">
+<html>
 <head>
 <meta charset="utf-8"/>
-<title>PersonaShift Engine 模組總覽</title>
+<title>PersonaShift Engine 展示首頁</title>
 <style>
-        body {
-            font-family: sans-serif;
-            background: #1e1e1e;
-            color: #fff;
-            margin: 0;
-            padding: 20px;
-        }
-        .module-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .module-card {
-            background: #2e2e2e;
-            padding: 20px;
-            border-radius: 8px;
-            width: 260px;
-            box-shadow: 0 0 10px #000;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            background: #4caf50;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .btn:hover {
-            background: #66bb6a;
-        }
-    </style>
-
-<style>
-.sidebar {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  width: 220px;
-  height: 100%;
-  background-color: #111;
-  color: #fff;
-  padding: 15px;
-  overflow-y: auto;
-  z-index: 1000;
-}
-.sidebar h2 {
-  font-size: 18px;
-  margin-top: 0;
-}
-.sidebar .nav-links {
-  list-style-type: none;
-  padding: 0;
-}
-.sidebar .nav-links li {
-  margin: 10px 0;
-}
-.sidebar .nav-links a {
-  color: #9dc6ff;
-  text-decoration: none;
-}
-.sidebar .nav-links a:hover {
-  color: #fff;
-}
-body {
-  margin-left: 240px;
-}
-</style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .card {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      width: 300px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .button:hover {
+      background-color: #005fa3;
+    }
+  </style>
 </head>
 <body>
-<div class="sidebar">
-<h2>模組選單</h2>
-<ul class="nav-links">
-<li><a href="#tone-simulator">語氣模擬系統</a></li>
-<li><a href="#memory-simulator">記憶模擬器</a></li>
-<li><a href="#context-integrator">語境整合器</a></li>
-<li><a href="#preference-mapper">偏好圖譜</a></li>
-<li><a href="#save-state">儲存模擬器</a></li>
-<li><a href="#gpt-template">GPT 串接模版</a></li>
-<li><a href="#persona-visualizer">人格偏移歷程可視化</a></li>
-<li><a href="#story-simulator">敘事事件模擬器</a></li>
-<li><a href="#language-dimensions">語感維度擴充</a></li>
-<li><a href="#style-analyzer">角色行為風格分析</a></li>
-<li><a href="#timeline">記憶時間軸導圖</a></li>
-<li><a href="#scenario-shifter">角色情境偏移模擬器</a></li>
-<li><a href="#empathy-field">語言偏移訓練 × 多角色共感場</a></li>
-<li><a href="#conflict-simulator">語感認知衝突模擬器</a></li>
-</ul>
+<h1>PersonaShift Engine 模組展示頁</h1>
+<div class="card-container">
+<div class="card">
+<h3>🧠 模擬器總覽</h3>
+<p>進入模組選擇頁面，探索各種人格與敘事模擬模組。</p>
+<a class="button" href="simulator.html">前往模擬器</a>
 </div>
-
-<h1>PersonaShift Engine 模組總覽</h1>
-<p>點選下方模組以開啟功能或說明：</p>
-<div class="module-grid">
-<div class="module-card">
-<h3>人格偏移系統</h3>
-<a class="btn" href="/docs/modules/persona-shift.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>語氣模擬系統</h3>
-<a class="btn" href="/docs/modules/tone-emulation.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>記憶模擬系統</h3>
-<a class="btn" href="/docs/modules/memory-core.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>GPT語境整合</h3>
-<a class="btn" href="/docs/modules/context-sync.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>偏好圖譜模組</h3>
-<a class="btn" href="/docs/modules/preferences.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>儲存模擬器</h3>
-<a class="btn" href="/docs/modules/storage.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>GPT 串接模版</h3>
-<a class="btn" href="/docs/modules/gpt-template.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>人格可視化歷程</h3>
-<a class="btn" href="/docs/modules/visualization.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>敘事事件模擬器</h3>
-<a class="btn" href="/docs/modules/narrative-sim.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>多語感插入系統</h3>
-<a class="btn" href="/docs/modules/sense-expansion.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>角色行為風格分析</h3>
-<a class="btn" href="/docs/modules/style-analysis.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>記憶時間軸導圖</h3>
-<a class="btn" href="/docs/modules/timeline.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>情境偏移模擬器</h3>
-<a class="btn" href="/docs/modules/context-shift.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>多角色共感語場</h3>
-<a class="btn" href="/docs/modules/empathy-field.html" target="_blank">開啟模組</a>
-</div>
-<div class="module-card">
-<h3>語感衝突模擬器</h3>
-<a class="btn" href="/docs/modules/conflict-sim.html" target="_blank">開啟模組</a>
+<div class="card">
+<h3>🔗 API 模擬器</h3>
+<p>使用 Swagger UI 互動式測試 PersonaShift Engine 模組。</p>
+<a class="button" href="api.html">前往 API 模擬器</a>
 </div>
 </div>
 </body>
