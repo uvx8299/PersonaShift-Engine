@@ -1,47 +1,77 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>PersonaShift 模擬器</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: sans-serif; background: #121212; color: #f0f0f0; margin: 0; padding: 2em; }
-        h1 { color: #00e5ff; }
-        .module-card { background: #1e1e1e; padding: 1em; margin: 1em 0; border-radius: 10px; box-shadow: 0 0 10px #333; }
-        .module-card button { background: #00e5ff; color: #000; border: none; padding: 0.5em 1em; border-radius: 5px; cursor: pointer; }
-        .output-box { background: #222; padding: 1em; border-radius: 8px; margin-top: 1em; white-space: pre-wrap; }
-    </style>
+  <meta charset="utf-8">
+  <title>PersonaShift 模組模擬器</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .card {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      width: 360px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    button {
+      margin-right: 8px;
+      margin-top: 8px;
+      padding: 6px 12px;
+      border: none;
+      background-color: #007acc;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+  </style>
 </head>
 <body>
-    <h1>PersonaShift 模擬器</h1>
-    <p>選擇一個模組並啟動模擬。</p>
-
-    <div class="module-card">
-        <h2>角色語氣模擬器</h2>
-        <button onclick="simulateTone()">啟動模擬</button>
-        <div id="toneOutput" class="output-box"></div>
+  <h1>PersonaShift Engine 模組模擬器</h1>
+  <div class="card-container">
+    <div class="card">
+      <h3>🧬 MemoryTimeline 模組</h3>
+      <p>模擬角色記憶變化過程，依據觸發事件建立時間序列。</p>
+      <button onclick="simulateMemory()">🔄 啟動模擬</button>
+      <button onclick="previewMemory()">👁 預覽結果</button>
+      <pre id="memory-output" style="display:none;"></pre>
+      <div id="memory-preview" style="display:none; margin-top:8px;">
+        記憶碎片 417-B 被觸發，角色進入「預臨界」人格偏移狀態。
+      </div>
     </div>
-
-    <div class="module-card">
-        <h2>記憶模擬器</h2>
-        <button onclick="simulateMemory()">啟動模擬</button>
-        <div id="memoryOutput" class="output-box"></div>
-    </div>
-
-    <script>
-        function simulateTone() {
-            document.getElementById('toneOutput').innerText = '模擬角色語氣中...
-角色：L-973
-語氣：憂鬱 × 冷靜
-輸出語句：「我不想再看見這片荒原的倒影...」';
-        }
-
-        function simulateMemory() {
-            document.getElementById('memoryOutput').innerText = '載入記憶模組...
-角色：K-512
-記憶片段：「他曾在那場語權戰中失去了名字。」';
-        }
-    </script>
+  </div>
+  <script>
+    function simulateMemory() {
+      const json = {
+        id: "417",
+        trigger: "event-417-B",
+        result: "pre-critical shift",
+        memory_fragment: "417-B",
+        timestamp: "2025-06-05T09:25:00Z"
+      };
+      document.getElementById("memory-output").style.display = "block";
+      document.getElementById("memory-output").textContent = JSON.stringify(json, null, 2);
+    }
+    function previewMemory() {
+      document.getElementById("memory-preview").style.display = "block";
+    }
+  </script>
 </body>
 </html>
