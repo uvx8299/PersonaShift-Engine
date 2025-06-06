@@ -1,35 +1,85 @@
-
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PersonaShift Engine 展示首頁</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PersonaShift Engine 模組展示</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      padding: 2rem;
+      background-color: #fff;
+      color: #000;
+    }
+    .module {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f9f9f9;
+    }
+    .module h3 {
+      margin: 0 0 0.5rem 0;
+    }
+    .module a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #4a90e2;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #eee;
+      }
+      .module {
+        background: #1f1f1f;
+        border-color: #444;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>PersonaShift Engine 模組展示</h1>
-        <nav>
-            <ul>
-                <li><a href="#modules">模組列表</a></li>
-            </ul>
-        </nav>
-    </header>
+  <h1>PersonaShift Engine 模組展示首頁</h1>
 
-    <main>
-        <section id="modules">
-            <h2>模組展示區</h2>
-            <div class="module-card">
-                <h3>人格偏移模組</h3>
-                <p>展示角色人格變化與多樣化行為表現。</p>
-                <a href="modules/character-shift.html">進入模組</a>
-            </div>
-        </section>
-    </main>
+  <div class="module">
+    <h3>人格偏移模組</h3>
+    <p>顯示角色人格變化與多樣化行為表現。</p>
+    <a href="modules/character-shift.html">進入模組</a>
+  </div>
 
-    <footer>
-        <p>© 2025 PersonaShift Engine</p>
-    </footer>
+  <div class="module">
+    <h3>記憶模擬器</h3>
+    <p>模擬角色的記憶重建與片段回憶組合邏輯。</p>
+    <a href="modules/memory-sim.html">進入模組</a>
+  </div>
+
+  <div class="module">
+    <h3>語言偏差模擬</h3>
+    <p>觀察角色語言表達偏移與概念漂移模型。</p>
+    <a href="modules/language-deviation.html">進入模組</a>
+  </div>
+
+  <div class="module">
+    <h3>語感共鳴模擬</h3>
+    <p>模擬角色語感與環境語意的共鳴程度。</p>
+    <a href="modules/language-resonance.html">進入模組</a>
+  </div>
+
+  <div class="module">
+    <h3>認知衝突模擬器</h3>
+    <p>模擬角色內在認知與信念衝突的反應表現。</p>
+    <a href="modules/cognitive-conflict-sim.html">進入模組</a>
+  </div>
+
+  <div class="module">
+    <h3>反社會人格模擬器</h3>
+    <p>觀察角色在反社會行為模型下的應對行動。</p>
+    <a href="modules/antisocial-persona-sim.html">進入模組</a>
+  </div>
+
 </body>
 </html>
