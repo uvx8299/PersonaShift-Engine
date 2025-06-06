@@ -1,57 +1,106 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
-  <meta charset="utf-8">
-  <title>PersonaShift Engine 展示首頁</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
-    }
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .card {
-      background: white;
-      padding: 16px;
-      border-radius: 8px;
-      width: 300px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .card h3 {
-      margin-top: 0;
-    }
-    .button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 12px;
-      background-color: #007acc;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    .button:hover {
-      background-color: #005fa3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>PersonaShift Engine 模組總覽</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 2em; background-color: #111; color: #eee; }
+        h1 { text-align: center; }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5em;
+            margin-top: 2em;
+        }
+        .card {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            padding: 1.5em;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            background-color: #222;
+        }
+        .card h3 { margin-top: 0.2em; }
+        .card a {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            background: #444;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .card a:hover { background: #666; }
+    </style>
 </head>
 <body>
-  <h1>PersonaShift Engine 模組展示頁</h1>
-  <div class="card-container">
-    <div class="card">
-      <h3>🧠 模擬器總覽</h3>
-      <p>進入模組選擇頁面，探索各種人格與敘事模擬模組。</p>
-      <a href="simulator.html" class="button">前往模擬器</a>
+    <h1>PersonaShift Engine 模組互動總覽</h1>
+    <div class="card-grid">
+
+        <div class="card">
+            <h2>🧠 模擬器總覽</h2>
+            <p>探索各種人格與敘事模擬模組</p>
+            <a href="simulator.html">前往</a>
+        </div>
+    
+        <div class="card">
+            <h2>🔗 API 模擬器</h2>
+            <p>互動測試 PersonaShift API 模組</p>
+            <a href="api.html">前往</a>
+        </div>
+    
+        <div class="card">
+            <h2>🎭 語氣模擬系統</h2>
+            <p>模擬角色語氣風格與情緒變化</p>
+            <a href="tone_simulator.html">前往</a>
+        </div>
+    
+        <div class="card">
+            <h2>🧬 記憶模擬系統</h2>
+            <p>角色長短期記憶狀態模擬</p>
+            <a href="memory_module.html">前往</a>
+        </div>
+    
+        <div class="card">
+            <h2>📊 偏好圖譜模組</h2>
+            <p>角色個性偏好圖譜結構展示</p>
+            <a href="preference_map.html">前往</a>
+        </div>
+    
+        <div class="card">
+            <h2>🧩 GPT 串接模版</h2>
+            <p>快速連接與整合 GPT 類模型</p>
+            <a href="gpt_integration.html">前往</a>
+        </div>
+    
+        <div class="card">
+            <h2>📜 敘事事件模擬器</h2>
+            <p>建立互動敘事邏輯與角色反應模擬</p>
+            <a href="narrative_simulator.html">前往</a>
+        </div>
+    
+        <div class="card">
+            <h2>⚠️ 語感衝突模擬器</h2>
+            <p>模擬語言衝突與語意感染情境</p>
+            <a href="semantic_conflict.html">前往</a>
+        </div>
+    
+        <div class="card">
+            <h2>📈 人格偏移可視化</h2>
+            <p>角色行為與邏輯變異視覺呈現</p>
+            <a href="persona_shift_viz.html">前往</a>
+        </div>
+    
+        <div class="card">
+            <h2>🕰️ 記憶時間軸導圖</h2>
+            <p>角色記憶事件與時間軸互動圖譜</p>
+            <a href="memory_timeline.html">前往</a>
+        </div>
+    
     </div>
-    <div class="card">
-      <h3>🔗 API 模擬器</h3>
-      <p>使用 Swagger UI 互動式測試 PersonaShift Engine 模組。</p>
-      <a href="api.html" class="button">前往 API 模擬器</a>
-    </div>
-  </div>
 </body>
 </html>
