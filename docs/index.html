@@ -5,102 +5,133 @@
     <meta charset="UTF-8">
     <title>PersonaShift Engine 模組總覽</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 2em; background-color: #111; color: #eee; }
-        h1 { text-align: center; }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5em;
-            margin-top: 2em;
-        }
-        .card {
+        body {
+            font-family: sans-serif;
             background: #1e1e1e;
-            border: 1px solid #333;
-            padding: 1.5em;
-            border-radius: 8px;
-            transition: transform 0.2s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            background-color: #222;
-        }
-        .card h3 { margin-top: 0.2em; }
-        .card a {
-            display: inline-block;
-            margin-top: 1em;
-            padding: 0.5em 1em;
-            background: #444;
             color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
+            margin: 0;
+            padding: 20px;
         }
-        .card a:hover { background: #666; }
+        .module-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .module-card {
+            background: #2e2e2e;
+            padding: 20px;
+            border-radius: 8px;
+            width: 260px;
+            box-shadow: 0 0 10px #000;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            background: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #66bb6a;
+        }
     </style>
 </head>
 <body>
-    <h1>PersonaShift Engine 模組互動總覽</h1>
-    <div class="card-grid">
+    <h1>PersonaShift Engine 模組總覽</h1>
+    <p>點選下方模組以開啟功能或說明：</p>
+    <div class="module-grid">
+        
+<div class="module-card">
+    <h3>人格偏移系統</h3>
+    <a class="btn" href="/docs/modules/persona-shift.html" target="_blank">開啟模組</a>
+</div>
 
-        <div class="card">
-            <h2>🧠 模擬器總覽</h2>
-            <p>探索各種人格與敘事模擬模組</p>
-            <a href="simulator.html">前往</a>
-        </div>
-    
-        <div class="card">
-            <h2>🔗 API 模擬器</h2>
-            <p>互動測試 PersonaShift API 模組</p>
-            <a href="api.html">前往</a>
-        </div>
-    
-        <div class="card">
-            <h2>🎭 語氣模擬系統</h2>
-            <p>模擬角色語氣風格與情緒變化</p>
-            <a href="tone_simulator.html">前往</a>
-        </div>
-    
-        <div class="card">
-            <h2>🧬 記憶模擬系統</h2>
-            <p>角色長短期記憶狀態模擬</p>
-            <a href="memory_module.html">前往</a>
-        </div>
-    
-        <div class="card">
-            <h2>📊 偏好圖譜模組</h2>
-            <p>角色個性偏好圖譜結構展示</p>
-            <a href="preference_map.html">前往</a>
-        </div>
-    
-        <div class="card">
-            <h2>🧩 GPT 串接模版</h2>
-            <p>快速連接與整合 GPT 類模型</p>
-            <a href="gpt_integration.html">前往</a>
-        </div>
-    
-        <div class="card">
-            <h2>📜 敘事事件模擬器</h2>
-            <p>建立互動敘事邏輯與角色反應模擬</p>
-            <a href="narrative_simulator.html">前往</a>
-        </div>
-    
-        <div class="card">
-            <h2>⚠️ 語感衝突模擬器</h2>
-            <p>模擬語言衝突與語意感染情境</p>
-            <a href="semantic_conflict.html">前往</a>
-        </div>
-    
-        <div class="card">
-            <h2>📈 人格偏移可視化</h2>
-            <p>角色行為與邏輯變異視覺呈現</p>
-            <a href="persona_shift_viz.html">前往</a>
-        </div>
-    
-        <div class="card">
-            <h2>🕰️ 記憶時間軸導圖</h2>
-            <p>角色記憶事件與時間軸互動圖譜</p>
-            <a href="memory_timeline.html">前往</a>
-        </div>
-    
+
+<div class="module-card">
+    <h3>語氣模擬系統</h3>
+    <a class="btn" href="/docs/modules/tone-emulation.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>記憶模擬系統</h3>
+    <a class="btn" href="/docs/modules/memory-core.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>GPT語境整合</h3>
+    <a class="btn" href="/docs/modules/context-sync.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>偏好圖譜模組</h3>
+    <a class="btn" href="/docs/modules/preferences.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>儲存模擬器</h3>
+    <a class="btn" href="/docs/modules/storage.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>GPT 串接模版</h3>
+    <a class="btn" href="/docs/modules/gpt-template.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>人格可視化歷程</h3>
+    <a class="btn" href="/docs/modules/visualization.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>敘事事件模擬器</h3>
+    <a class="btn" href="/docs/modules/narrative-sim.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>多語感插入系統</h3>
+    <a class="btn" href="/docs/modules/sense-expansion.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>角色行為風格分析</h3>
+    <a class="btn" href="/docs/modules/style-analysis.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>記憶時間軸導圖</h3>
+    <a class="btn" href="/docs/modules/timeline.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>情境偏移模擬器</h3>
+    <a class="btn" href="/docs/modules/context-shift.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>多角色共感語場</h3>
+    <a class="btn" href="/docs/modules/empathy-field.html" target="_blank">開啟模組</a>
+</div>
+
+
+<div class="module-card">
+    <h3>語感衝突模擬器</h3>
+    <a class="btn" href="/docs/modules/conflict-sim.html" target="_blank">開啟模組</a>
+</div>
+
     </div>
 </body>
 </html>
