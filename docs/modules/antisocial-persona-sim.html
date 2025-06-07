@@ -1,14 +1,48 @@
 
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>反社會人格模擬器 | Antisocial Persona Simulator</title>
+  <title>反社會人格模擬器</title>
+  <style>
+    body {{
+      font-family: sans-serif;
+      padding: 1em;
+      background: #fff;
+      color: #000;
+      transition: background 0.5s, color 0.5s;
+    }}
+    @media (prefers-color-scheme: dark) {{
+      body {{ background: #111; color: #eee; }}
+    }}
+    .result {{
+      margin-top: 1em;
+      border: 1px dashed #888;
+      padding: 1em;
+      animation: fadein 1s ease-in-out;
+    }}
+    @keyframes fadein {{
+      from {{ opacity: 0; transform: translateY(10px); }}
+      to {{ opacity: 1; transform: translateY(0); }}
+    }}
+  </style>
 </head>
 <body>
   <h1>反社會人格模擬器</h1>
-  <p>此模組模擬具有反社會傾向角色的行為決策與情境反應邏輯。</p>
-  <!-- 可擴展區塊 -->
+  <p>模擬角色出現反社會傾向的可能行為與風險等級。</p>
+  <textarea id="input" rows="4" style="width:100%" placeholder="輸入角色背景或事件..."></textarea><br><br>
+  <button onclick="simulate()">執行模擬</button>
+  <div id="result" class="result" style="display:none;"></div>
+  <script>
+    function simulate() {{
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.innerHTML = "⚠️ 模擬中：評估反社會指標...<br><br>";
+      setTimeout(() => {{
+        result.innerHTML = "🔍 評估結果：<br>角色表現出高控制欲與情緒冷漠，具備操縱行為風險，建議進一步觀察。";
+      }}, 1000);
+    }}
+  </script>
 </body>
 </html>
