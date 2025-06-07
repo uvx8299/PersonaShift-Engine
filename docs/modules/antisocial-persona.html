@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>反社會人格模擬器 - PersonaShift</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fffaf9;
+      color: #222;
+    }
+    h1 {
+      color: #b00020;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    textarea, button {
+      font-size: 1rem;
+      padding: 0.75rem;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    #output {
+      background-color: #f6eaea;
+      padding: 1rem;
+      margin-top: 1rem;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>反社會人格模擬器</h1>
+  <p class="section">展示角色在極端情境下的反社會行為模式。</p>
+
+  <div class="section">
+    <h2>輸入觸發情境</h2>
+    <textarea id="scenarioInput" rows="5" placeholder="描述角色被背叛、資源爭奪、道德挑戰等場景…"></textarea>
+    <button onclick="simulateAntisocial()">執行模擬</button>
+  </div>
+
+  <div class="section">
+    <h2>模擬結果</h2>
+    <div id="output">反社會行為結果將顯示於此。</div>
+  </div>
+
+  <script>
+    function simulateAntisocial() {
+      const input = document.getElementById("scenarioInput").value.trim();
+      const output = document.getElementById("output");
+
+      if (!input) {
+        output.textContent = "請輸入情境以進行模擬。";
+        return;
+      }
+
+      const responses = [
+        "角色毫無同理心地操縱局勢，達成目標。",
+        "角色選擇破壞規則，並藉由暴力獲取資源。",
+        "角色表現出冷靜計算並背叛同伴。",
+        "角色無視後果，將風險轉嫁給他人。",
+        "角色以魅力掩飾真實動機，達成操控。"
+      ];
+
+      const result = responses[Math.floor(Math.random() * responses.length)];
+      output.textContent = `⚠️ 輸入情境：「${input}」\n🧩 模擬行為反應：\n${result}`;
+    }
+  </script>
+</body>
+</html>
