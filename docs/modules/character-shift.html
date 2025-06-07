@@ -2,73 +2,27 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <title>人格偏移模組</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>人格偏移模組 - PersonaShift</title>
   <style>
-    body {
-      font-family: "Noto Sans TC", sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background-color: #f9f9f9;
-      color: #222;
-    }
-    h1 {
-      color: #2b2b2b;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    textarea, button {
-      font-size: 1rem;
-      padding: 0.75rem;
-      width: 100%;
-      margin-top: 0.5rem;
-    }
-    #output {
-      background-color: #eee;
-      padding: 1rem;
-      margin-top: 1rem;
-      white-space: pre-wrap;
-    }
+    body { font-family: sans-serif; padding: 1rem; background: #fff; color: #333; }
+    .module-info { background: #f0f0f0; padding: 1rem; border-radius: 8px; margin-top: 2rem; }
+    h2 { margin-bottom: 0.5rem; }
   </style>
 </head>
 <body>
   <h1>人格偏移模組</h1>
-  <p class="section">此頁展示角色人格變化與多樣化行為的模擬。</p>
+  <p>角色性格模擬、人格變異演練</p>
 
-  <div class="section">
-    <h2>模擬輸入</h2>
-    <textarea id="input" rows="5" placeholder="輸入角色事件、經歷或環境改變…"></textarea>
-    <button onclick="simulateShift()">執行模擬</button>
-  </div>
-
-  <div class="section">
-    <h2>模擬結果</h2>
-    <div id="output">模擬結果將顯示於此。</div>
-  </div>
-
-  <script>
-    function simulateShift() {
-      const input = document.getElementById("input").value.trim();
-      const output = document.getElementById("output");
-      if (!input) {
-        output.textContent = "請輸入角色事件內容以進行模擬。";
-        return;
-      }
-
-      // 假設性模擬邏輯（本地模擬）
-      const responses = [
-        "角色變得更加冷靜與計算。",
-        "角色展現出反常的衝動行為。",
-        "角色產生了自我懷疑，開始質疑既有信念。",
-        "角色的情緒波動變得明顯，進入偏執狀態。",
-        "角色展開自我保護模式，拒絕信任他人。",
-        "角色的道德觀發生偏移，做出風險性決策。"
-      ];
-
-      const result = responses[Math.floor(Math.random() * responses.length)];
-      output.textContent = `🧠 事件輸入：「${input}」\n➡️ 模擬人格偏移反應：\n${result}`;
-    }
-  </script>
+<section class="module-info">
+  <h2>模組技術說明</h2>
+  <ul>
+    <li><strong>模組名稱：</strong>人格偏移模組</li>
+    <li><strong>核心功能：</strong>角色性格模擬、人格變異演練</li>
+    <li><strong>應用場景：</strong>適用於角色互動行為變異、敘事分支影響設計。</li>
+    <li><strong>運作原理：</strong>支援人格樹狀變異、多重人格觸發模型。</li>
+    <li><strong>開發備註：</strong>可串接行為樹與語言偏移模組以強化互動深度。</li>
+  </ul>
+</section>
 </body>
 </html>
