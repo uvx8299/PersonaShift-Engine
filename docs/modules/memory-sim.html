@@ -1,48 +1,27 @@
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>記憶模擬器</title>
+  <title>Memory Simulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {{
-      font-family: sans-serif;
-      padding: 1em;
-      background: #fff;
-      color: #000;
-      transition: background 0.5s, color 0.5s;
-    }}
-    @media (prefers-color-scheme: dark) {{
-      body {{ background: #111; color: #eee; }}
-    }}
-    .result {{
-      margin-top: 1em;
-      border: 1px dashed #888;
-      padding: 1em;
-      animation: fadein 1s ease-in-out;
-    }}
-    @keyframes fadein {{
-      from {{ opacity: 0; transform: translateY(10px); }}
-      to {{ opacity: 1; transform: translateY(0); }}
-    }}
+    body { font-family: sans-serif; background-color: #121212; color: #e0e0e0; padding: 2em; }
+    h1 { color: #a5d6a7; }
+    input, button { margin-top: 1em; padding: 0.5em; }
   </style>
 </head>
 <body>
   <h1>記憶模擬器</h1>
-  <p>模擬角色在不同情境下的記憶召喚與回憶線索。</p>
-  <textarea id="input" rows="4" style="width:100%" placeholder="描述觸發情境..."></textarea><br><br>
-  <button onclick="simulate()">執行模擬</button>
-  <div id="result" class="result" style="display:none;"></div>
+  <p>模擬 AI 對事件記憶的重組與遺忘機制。</p>
+  <input type="text" placeholder="輸入記憶片段" id="memoryInput" />
+  <button onclick="simulateMemory()">儲存記憶</button>
+  <p id="result"></p>
+
   <script>
-    function simulate() {{
-      const result = document.getElementById("result");
-      result.style.display = "block";
-      result.innerHTML = "🧠 正在回憶中...<br><br>";
-      setTimeout(() => {{
-        result.innerHTML = "📌 記憶片段召回：<br>角色回憶起童年時與母親走失的情境，產生焦慮與依附反應。";
-      }}, 1000);
-    }}
+    function simulateMemory() {
+      const input = document.getElementById('memoryInput').value;
+      document.getElementById('result').textContent = `模擬記憶已儲存：「${input}」`;
+    }
   </script>
 </body>
 </html>
