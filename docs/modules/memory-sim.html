@@ -1,27 +1,24 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <title>Memory Simulator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body { font-family: sans-serif; background-color: #121212; color: #e0e0e0; padding: 2em; }
-    h1 { color: #a5d6a7; }
-    input, button { margin-top: 1em; padding: 0.5em; }
-  </style>
+  <meta charset="UTF-8">
+  <title>記憶模擬器 - PersonaShift Engine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script defer src="../assets/script.js"></script>
 </head>
 <body>
-  <h1>記憶模擬器</h1>
-  <p>模擬 AI 對事件記憶的重組與遺忘機制。</p>
-  <input type="text" placeholder="輸入記憶片段" id="memoryInput" />
-  <button onclick="simulateMemory()">儲存記憶</button>
-  <p id="result"></p>
-
-  <script>
-    function simulateMemory() {
-      const input = document.getElementById('memoryInput').value;
-      document.getElementById('result').textContent = `模擬記憶已儲存：「${input}」`;
-    }
-  </script>
+  <header>
+    <h1>記憶模擬器 (Memory Simulator)</h1>
+    <p>本模組用於模擬個體的記憶重組、記憶偏誤與時間感知調整過程。</p>
+  </header>
+  <main>
+    <section class="module-simulation">
+      <h2>模擬介面</h2>
+      <p>這裡將呈現記憶模擬輸入框與輸出邏輯，目前為展示版，僅支援範例資料互動。</p>
+      <button onclick="alert('模擬啟動：回憶片段生成中……')">啟動記憶模擬</button>
+    </section>
+  </main>
 </body>
 </html>
