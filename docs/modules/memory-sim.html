@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>記憶模擬器 - PersonaShift</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+    h1 {
+      color: #2c2c2c;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    textarea, button {
+      font-size: 1rem;
+      padding: 0.75rem;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    #output {
+      background-color: #f0f0f0;
+      padding: 1rem;
+      margin-top: 1rem;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>記憶模擬器</h1>
+  <p class="section">模擬角色的記憶儲存與回憶觸發。</p>
+
+  <div class="section">
+    <h2>輸入記憶碎片</h2>
+    <textarea id="memoryInput" rows="5" placeholder="輸入角色經歷片段、童年記憶、關鍵對話…"></textarea>
+    <button onclick="simulateMemory()">啟動記憶重構</button>
+  </div>
+
+  <div class="section">
+    <h2>模擬結果</h2>
+    <div id="output">記憶重構結果將顯示於此。</div>
+  </div>
+
+  <script>
+    function simulateMemory() {
+      const input = document.getElementById("memoryInput").value.trim();
+      const output = document.getElementById("output");
+      if (!input) {
+        output.textContent = "請輸入記憶片段以進行模擬。";
+        return;
+      }
+
+      // 假設性模擬邏輯
+      const recalls = [
+        "這段記憶引發角色強烈情感波動。",
+        "角色對事件產生了選擇性遺忘現象。",
+        "記憶碎片連結到過去某個未解的事件。",
+        "角色因回憶而做出防衛反應。",
+        "這段記憶被角色重新詮釋為成長的轉捩點。"
+      ];
+
+      const result = recalls[Math.floor(Math.random() * recalls.length)];
+      output.textContent = `🧠 記憶輸入：「${input}」\n📌 回憶觸發模擬結果：\n${result}`;
+    }
+  </script>
+</body>
+</html>
