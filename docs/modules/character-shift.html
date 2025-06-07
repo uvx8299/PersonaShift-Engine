@@ -1,48 +1,18 @@
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>人格偏移模組</title>
+  <title>Character Shift Module</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {{
-      font-family: sans-serif;
-      padding: 1em;
-      background: #fff;
-      color: #000;
-      transition: background 0.5s, color 0.5s;
-    }}
-    @media (prefers-color-scheme: dark) {{
-      body {{ background: #111; color: #eee; }}
-    }}
-    .result {{
-      margin-top: 1em;
-      border: 1px dashed #888;
-      padding: 1em;
-      animation: fadein 1s ease-in-out;
-    }}
-    @keyframes fadein {{
-      from {{ opacity: 0; transform: translateY(10px); }}
-      to {{ opacity: 1; transform: translateY(0); }}
-    }}
+    body { font-family: sans-serif; background-color: #1e1e1e; color: #f0f0f0; padding: 2em; }
+    h1 { color: #90caf9; }
+    button { padding: 0.5em 1em; margin-top: 1em; }
   </style>
 </head>
 <body>
-  <h1>人格偏移模組</h1>
-  <p>輸入角色狀態描述，模擬人格變化的傾向與結果。</p>
-  <textarea id="input" rows="4" style="width:100%" placeholder="輸入角色事件描述..."></textarea><br><br>
-  <button onclick="simulate()">執行模擬</button>
-  <div id="result" class="result" style="display:none;"></div>
-  <script>
-    function simulate() {{
-      const result = document.getElementById("result");
-      result.style.display = "block";
-      result.innerHTML = "⚙️ 正在模擬中...<br><br>";
-      setTimeout(() => {{
-        result.innerHTML = "✅ 模擬完成：<br>角色人格傾向由『保守』轉為『反叛』，並顯現高危決策傾向。";
-      }}, 1000);
-    }}
-  </script>
+  <h1>人格偏移模擬器</h1>
+  <p>模擬角色在多重情境下的人格轉變與行為反應。</p>
+  <button onclick="alert('人格偏移觸發：偏移至模式 B')">啟動模擬</button>
 </body>
 </html>
