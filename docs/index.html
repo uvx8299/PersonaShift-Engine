@@ -2,40 +2,66 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PersonaShift Engine 模組展示</title>
   <style>
-    body { font-family: sans-serif; padding: 2em; }
-    .dark-mode { background-color: #111; color: #eee; }
-    a { color: purple; }
-    section { margin-bottom: 2em; }
-  </style>
-  <script>
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark-mode');
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      margin: 20px;
+      background-color: #fff;
+      color: #111;
     }
-  </script>
+
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 0.4em;
+    }
+
+    .module-card {
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+      background-color: #f9f9f9;
+    }
+
+    .module-card h3 {
+      margin-top: 0;
+    }
+
+    .module-card a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #4a00ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>PersonaShift Engine<br>模組展示</h1>
-  <a href="#modules-list">模組列表</a>
-  <section id="modules-list">
-    <h2>模組展示區</h2>
 
+<h1>PersonaShift Engine 模組展示</h1>
+
+<section id="modules">
+  <div class="module-card">
     <h3>人格偏移模組</h3>
     <p>展示角色人格變化與多樣化行為表現。</p>
     <a href="modules/character-shift.html">進入模組</a>
+  </div>
 
+  <div class="module-card">
     <h3>記憶模擬器</h3>
-    <p>模擬角色記憶儲存與回憶觸發的過程。</p>
+    <p>模擬角色的記憶儲存與回憶觸發。</p>
     <a href="modules/memory-sim.html">進入模組</a>
+  </div>
 
+  <div class="module-card">
     <h3>反社會人格模擬器</h3>
-    <p>模擬缺乏共感或規則偏差角色的行為邏輯。</p>
-    <a href="modules/antisocial-persona-sim.html">進入模組</a>
-  </section>
+    <p>展示角色在極端情境下的反社會行為模式。</p>
+    <a href="modules/antisocial-persona.html">進入模組</a>
+  </div>
+</section>
 
-  <footer>© 2025 PersonaShift Engine</footer>
 </body>
 </html>
