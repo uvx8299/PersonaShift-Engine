@@ -1,67 +1,47 @@
 
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PersonaShift Engine 模組展示</title>
-  <style>
-    body {
-      font-family: "Noto Sans TC", sans-serif;
-      margin: 20px;
-      background-color: #fff;
-      color: #111;
-    }
-
-    h1 {
-      font-size: 1.8em;
-      margin-bottom: 0.4em;
-    }
-
-    .module-card {
-      border: 1px solid #aaa;
-      border-radius: 8px;
-      padding: 12px;
-      margin-bottom: 16px;
-      background-color: #f9f9f9;
-    }
-
-    .module-card h3 {
-      margin-top: 0;
-    }
-
-    .module-card a {
-      display: inline-block;
-      margin-top: 8px;
-      color: #4a00ff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>PersonaShift Engine - Modules</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+        .container { display: flex; flex-wrap: wrap; gap: 20px; }
+        .card {
+            background: white; border-radius: 8px; padding: 20px;
+            width: calc(33% - 40px); box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center; text-decoration: none; color: black;
+        }
+        .card:hover { background: #eef; }
+    </style>
 </head>
 <body>
-
-<h1>PersonaShift Engine 模組展示</h1>
-
-<section id="modules">
-  <div class="module-card">
-    <h3>人格偏移模組</h3>
-    <p>展示角色人格變化與多樣化行為表現。</p>
-    <a href="modules/character-shift.html">進入模組</a>
-  </div>
-
-  <div class="module-card">
-    <h3>記憶模擬器</h3>
-    <p>模擬角色的記憶儲存與回憶觸發。</p>
-    <a href="modules/memory-sim.html">進入模組</a>
-  </div>
-
-  <div class="module-card">
-    <h3>反社會人格模擬器</h3>
-    <p>展示角色在極端情境下的反社會行為模式。</p>
-    <a href="modules/antisocial-persona.html">進入模組</a>
-  </div>
-</section>
-
+    <h1>PersonaShift Engine 模組總覽</h1>
+    <div class="container">
+        <a href="../modules/character-shift.html" class="card">
+            <h2>人格偏移模組</h2>
+            <p>模擬角色根據情境產生的性格變化。</p>
+        </a>
+        <a href="../modules/memory-sim.html" class="card">
+            <h2>記憶模擬器</h2>
+            <p>模擬角色如何記憶、遺忘與記憶扭曲。</p>
+        </a>
+        <a href="../modules/antisocial-persona.html" class="card">
+            <h2>反社會人格模擬器</h2>
+            <p>展示極端利己、操控、與無共感傾向的行為模式。</p>
+        </a>
+        <a href="../modules/language-deviation.html" class="card">
+            <h2>語言偏差模擬器</h2>
+            <p>模擬語義偏移與語言誤解的行為結果。</p>
+        </a>
+        <a href="../modules/language-resonance.html" class="card">
+            <h2>語感共振模擬器</h2>
+            <p>呈現多角色語境共鳴與同步理解。</p>
+        </a>
+        <a href="../modules/cognitive-conflict.html" class="card">
+            <h2>認知衝突模擬器</h2>
+            <p>模擬角色內部信念與邏輯的衝突反應。</p>
+        </a>
+    </div>
 </body>
 </html>
