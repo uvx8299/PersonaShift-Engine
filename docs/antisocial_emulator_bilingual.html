@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>反社會人格模擬器 | Antisocial Persona Emulator</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; margin: 0; }
+    .btn {
+      display: inline-block; padding: 0.5rem 1rem; margin: 0.2rem;
+      border-radius: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-weight: 600; font-size: 0.9rem;
+      background-color: #f3f4f6; color: #111;
+      transition: background 0.2s; text-decoration: none;
+    }
+    .btn:hover { background-color: #e5e7eb; }
+    .dark .btn { background-color: #1f2937; color: #f9fafb; }
+    .dark .btn:hover { background-color: #374151; }
+    .dark body { background-color: #111827; color: #f9fafb; }
+    .text-gray-600 { color: #4b5563; }
+    .dark .text-gray-400 { color: #9ca3af; }
+    .lang { font-size: 0.9rem; opacity: 0.8; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 1rem; border-bottom: 1px solid #ccc;
+    }
+    .dark header { border-color: #374151; }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("theme-toggle");
+      toggleBtn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+      });
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>反社會人格模擬器 <span class="lang">/ Antisocial Persona Emulator</span></h1>
+    <button id="theme-toggle" class="btn">🌓</button>
+  </header>
+
+  <div style="margin-top:1rem; background:#ddd; height:200px;">[動畫預覽區塊 / Animation Preview]</div>
+
+  <p class="text-sm mt-4 text-gray-600 dark:text-gray-400">
+    展示極端人格如何影響語言與互動邊界。<br />
+    <span class="lang">Explores how extreme personas distort semantic boundaries.</span>
+  </p>
+
+  <div style="margin-top:1rem;">
+    <a href="/docs/antisocial-emulator" class="btn">📖 查看說明 / Docs</a>
+    <a href="/api/antisocial-emulator" class="btn">🔗 查看 API / API</a>
+    <a href="index_bilingual.html" class="btn">🏠 回首頁 / Home</a>
+  </div>
+</body>
+</html>
