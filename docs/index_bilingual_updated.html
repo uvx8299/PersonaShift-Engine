@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PersonaShift Engine 導覽首頁 | Bilingual</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; background-color: #f9fafb; }
+    .dark body { background-color: #111827; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem; background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .dark header { background: #1f2937; }
+    .logo { display: flex; align-items: center; font-weight: bold; font-size: 1.2rem; color: #111827; }
+    .dark .logo { color: #f9fafb; }
+    .logo img { height: 32px; margin-right: 0.5rem; }
+    nav a {
+      margin-left: 1rem; text-decoration: none; color: #4b5563; font-weight: 500;
+    }
+    nav a:hover { text-decoration: underline; }
+    .dark nav a { color: #d1d5db; }
+    .btn {
+      display: inline-block; padding: 0.5rem 1rem; margin: 0.2rem;
+      border-radius: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-weight: 600; font-size: 0.9rem;
+      background-color: #f3f4f6; transition: background 0.2s;
+      text-decoration: none; color: #111;
+    }
+    .btn:hover { background-color: #e5e7eb; }
+    .dark .btn { background-color: #374151; color: #f9fafb; }
+    .dark .btn:hover { background-color: #4b5563; }
+    h1, h2 { text-align: center; }
+    h1 { font-size: 1.8rem; margin: 2rem 0 1rem; }
+    .grid {
+      display: grid; gap: 1rem; padding: 0 2rem 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .card {
+      background: #fff; padding: 1rem; border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .dark .card { background: #1f2937; }
+    .text-gray-600 { color: #4b5563; }
+    .dark .text-gray-400 { color: #9ca3af; }
+    .about {
+      padding: 2rem; background: #f3f4f6; color: #1f2937;
+    }
+    .dark .about {
+      background: #1f2937; color: #f9fafb;
+    }
+    .lang { font-size: 0.9rem; opacity: 0.8; }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("theme-toggle");
+      toggleBtn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+      });
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="A_logo_design_for_%22PersonaShift_Engine%22_features_a.png" alt="Logo" />
+      PersonaShift Engine
+    </div>
+    <nav>
+      <a href="#about">關於我們 / About</a>
+      <a href="/docs/api/index.html">API 文檔</a>
+      <a href="https://github.com/uvx8299/personashift-engine" target="_blank">GitHub 專案</a>
+      <button id="theme-toggle" class="btn">🌓</button>
+    </nav>
+  </header>
+
+  <h1>🧩 模組導覽首頁<br><span class="lang">Module Navigation Homepage</span></h1>
+
+  <div class="grid">
+    <div class="card">
+      <h2>🧠 人格偏移模擬器<br><span class="lang">Character Shift Simulator</span></h2>
+      <p class="text-gray-600 dark:text-gray-400">
+        模擬語言刺激下的人格偏移與行為邏輯演變。<br />
+        <span class="lang">Simulates personality deviation and behavioral logic under linguistic stimuli.</span>
+      </p>
+      <a href="character_shift_bilingual.html" class="btn">進入模組 / Enter Module</a>
+    </div>
+
+    <div class="card">
+      <h2>🧬 記憶模擬器<br><span class="lang">Memory Simulator</span></h2>
+      <p class="text-gray-600 dark:text-gray-400">
+        重構語境觸發下的記憶片段與敘事回溯。<br />
+        <span class="lang">Reconstructs memory fragments triggered by semantic context.</span>
+      </p>
+      <a href="memory_simulator_bilingual.html" class="btn">進入模組 / Enter Module</a>
+    </div>
+
+    <div class="card">
+      <h2>🧨 反社會人格模擬器<br><span class="lang">Antisocial Persona Emulator</span></h2>
+      <p class="text-gray-600 dark:text-gray-400">
+        展示極端人格如何影響語言與互動邊界。<br />
+        <span class="lang">Explores how extreme personas distort semantic boundaries.</span>
+      </p>
+      <a href="antisocial_emulator_bilingual.html" class="btn">進入模組 / Enter Module</a>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <h2>📘 關於我們 / About Us</h2>
+    <p>
+      PersonaShift Engine 是一套模組化語言與人格模擬架構，致力於建立具人性、可共感、能理解語境的 AI 系統。<br />
+      <span class="lang">PersonaShift Engine is a modular framework for simulating language and personality dynamics in AI systems capable of empathy and context-awareness.</span>
+    </p>
+    <p>
+      本開源專案由 AI 敘事研究者 uvx8299 主導，並歡迎社群貢獻者參與，共同打造語言與人格未來的模擬宇宙。<br />
+      <span class="lang">This open-source project is led by narrative AI researcher uvx8299 and welcomes contributors to help shape the future of language and cognition simulation.</span>
+    </p>
+  </section>
+</body>
+</html>
