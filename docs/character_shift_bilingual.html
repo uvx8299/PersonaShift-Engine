@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
-<html lang="zh-Hant" class="dark">
+
+<html class="dark" lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>人格偏移模擬器 | Character Shift Simulator</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>人格偏移模擬器 | Character Shift Simulator</title>
+<style>
     body { font-family: sans-serif; padding: 2rem; margin: 0; }
     .btn {
       display: inline-block; padding: 0.5rem 1rem; margin: 0.2rem;
@@ -27,7 +28,7 @@
     }
     .dark header { border-color: #374151; }
   </style>
-  <script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
       const toggleBtn = document.getElementById("theme-toggle");
       toggleBtn.addEventListener("click", () => {
@@ -41,22 +42,19 @@
   </script>
 </head>
 <body>
-  <header>
-    <h1>人格偏移模擬器 <span class="lang">/ Character Shift Simulator</span></h1>
-    <button id="theme-toggle" class="btn">🌓</button>
-  </header>
-
-  <div style="margin-top:1rem; background:#ddd; height:200px;">[動畫預覽區塊 / Animation Preview]</div>
-
-  <p class="text-sm mt-4 text-gray-600 dark:text-gray-400">
-    模擬語言刺激下的人格偏移與行為邏輯演變。<br />
-    <span class="lang">Simulates personality deviation and behavioral logic under linguistic stimuli.</span>
-  </p>
-
-  <div style="margin-top:1rem;">
-    <a href="/docs/character-shift" class="btn">📖 查看說明 / Docs</a>
-    <a href="/api/character-shift" class="btn">🔗 查看 API / API</a>
-    <a href="index_bilingual.html" class="btn">🏠 回首頁 / Home</a>
-  </div>
+<header>
+<h1>人格偏移模擬器 <span class="lang">/ Character Shift Simulator</span></h1>
+<button class="btn" id="theme-toggle">🌓</button>
+</header>
+<div style="margin-top:1rem; background:#ddd; height:200px;">[動畫預覽區塊 / Animation Preview]</div>
+<p class="text-sm mt-4 text-gray-600 dark:text-gray-400">
+    模擬語言刺激下的人格偏移與行為邏輯演變。<br/>
+<span class="lang">Simulates personality deviation and behavioral logic under linguistic stimuli.</span>
+</p>
+<div style="margin-top:1rem;">
+<a class="btn" href="/docs/character-shift">📖 查看說明 / Docs</a>
+<a class="btn" href="/api/character-shift">🔗 查看 API / API</a>
+<a class="btn" href="index_bilingual.html">🏠 回首頁 / Home</a>
+</div>
 </body>
 </html>
