@@ -1,47 +1,115 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <title>PersonaShift Engine - Modules</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
-        .container { display: flex; flex-wrap: wrap; gap: 20px; }
-        .card {
-            background: white; border-radius: 8px; padding: 20px;
-            width: calc(33% - 40px); box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center; text-decoration: none; color: black;
-        }
-        .card:hover { background: #eef; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PersonaShift Engine 導覽首頁</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background-color: #f9fafb;
+    }
+    .dark body {
+      background-color: #111827;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0.2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-weight: 600;
+      font-size: 0.9rem;
+      background-color: #f3f4f6;
+      transition: background 0.2s;
+      text-decoration: none;
+      color: #111;
+    }
+    .btn:hover {
+      background-color: #e5e7eb;
+    }
+    .dark .btn {
+      background-color: #1f2937;
+      color: #f9fafb;
+    }
+    .dark .btn:hover {
+      background-color: #374151;
+    }
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .dark .card {
+      background: #1f2937;
+    }
+    .text-gray-600 {
+      color: #4b5563;
+    }
+    .dark .text-gray-400 {
+      color: #9ca3af;
+    }
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("theme-toggle");
+      toggleBtn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+      });
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    });
+  </script>
 </head>
 <body>
-    <h1>PersonaShift Engine 模組總覽</h1>
-    <div class="container">
-        <a href="../modules/character-shift.html" class="card">
-            <h2>人格偏移模組</h2>
-            <p>模擬角色根據情境產生的性格變化。</p>
-        </a>
-        <a href="../modules/memory-sim.html" class="card">
-            <h2>記憶模擬器</h2>
-            <p>模擬角色如何記憶、遺忘與記憶扭曲。</p>
-        </a>
-        <a href="../modules/antisocial-persona.html" class="card">
-            <h2>反社會人格模擬器</h2>
-            <p>展示極端利己、操控、與無共感傾向的行為模式。</p>
-        </a>
-        <a href="../modules/language-deviation.html" class="card">
-            <h2>語言偏差模擬器</h2>
-            <p>模擬語義偏移與語言誤解的行為結果。</p>
-        </a>
-        <a href="../modules/language-resonance.html" class="card">
-            <h2>語感共振模擬器</h2>
-            <p>呈現多角色語境共鳴與同步理解。</p>
-        </a>
-        <a href="../modules/cognitive-conflict.html" class="card">
-            <h2>認知衝突模擬器</h2>
-            <p>模擬角色內部信念與邏輯的衝突反應。</p>
-        </a>
+  <button id="theme-toggle" class="btn" style="position: fixed; top: 1rem; right: 1rem;">🌓 切換主題</button>
+
+  <h1>🧩 PersonaShift Engine 模組導覽首頁</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h2>🧠 人格偏移模擬器</h2>
+      <p class="text-gray-600 dark:text-gray-400">
+        展示人格模組在語言刺激下產生的偏移變化，模擬不同人格狀態的語言響應與邏輯流轉。
+      </p>
+      <a href="character_shift.html" class="btn">進入模組</a>
     </div>
+
+    <div class="card">
+      <h2>🧬 記憶模擬器</h2>
+      <p class="text-gray-600 dark:text-gray-400">
+        模擬記憶片段如何透過語義回溯被重構為敘事意象，並呈現語感觸發機制的視覺化過程。
+      </p>
+      <a href="memory_simulator.html" class="btn">進入模組</a>
+    </div>
+
+    <div class="card">
+      <h2>🧨 反社會人格模擬器</h2>
+      <p class="text-gray-600 dark:text-gray-400">
+        呈現無同理傾向人格於邊界行為下的語意扭曲演算，揭示極端情境中的語言邏輯異化模式。
+      </p>
+      <a href="antisocial_emulator.html" class="btn">進入模組</a>
+    </div>
+  </div>
 </body>
 </html>
