@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>人格偏移模擬器 | Character Shift Simulator</title>
+<style>
+    body { font-family: sans-serif; padding: 2rem; margin: 0; }
+    .btn {
+      display: inline-block; padding: 0.5rem 1rem; margin: 0.2rem;
+      border-radius: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-weight: 600; font-size: 0.9rem;
+      background-color: #f3f4f6; color: #111;
+      transition: background 0.2s; text-decoration: none;
+    }
+    .btn:hover { background-color: #e5e7eb; }
+    .dark .btn { background-color: #1f2937; color: #f9fafb; }
+    .dark .btn:hover { background-color: #374151; }
+    .dark body { background-color: #111827; color: #f9fafb; }
+    .text-gray-600 { color: #4b5563; }
+    .dark .text-gray-400 { color: #9ca3af; }
+    .lang { font-size: 0.9rem; opacity: 0.8; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 1rem; border-bottom: 1px solid #ccc;
+    }
+    .dark header { border-color: #374151; }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("theme-toggle");
+      toggleBtn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+      });
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    });
+</script>
+</head>
+<body>
+<header>
+<h1>人格偏移模擬器 <span class="lang">/ Character Shift Simulator</span></h1>
+<button class="btn" id="theme-toggle">🌓</button>
+</header>
+<div style="margin-top:1rem; background:#ddd; height:200px;">[動畫預覽區塊 / Animation Preview]</div>
+<p class="text-sm mt-4 text-gray-600 dark:text-gray-400">
+    模擬語言刺激下的人格偏移與行為邏輯演變。<br/>
+<span class="lang">Simulates personality deviation and behavioral logic under linguistic stimuli.</span>
+</p>
+<div style="margin-top:1rem;">
+<a class="btn" href="/docs/character-shift">📖 查看說明 / Docs</a>
+<a class="btn" href="/api/character-shift">🔗 查看 API / API</a>
+<a class="btn" href="index_bilingual.html">🏠 回首頁 / Home</a>
+</div>
+</body>
+</html>
